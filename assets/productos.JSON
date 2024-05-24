@@ -1,0 +1,107 @@
+[
+    {
+        "producto": "iPhone 13",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_619667-MLA47781882790_102021-O.webp",
+        "precio": 983999,
+        "categoria": "celular",
+        "colores": ["rojo","verde","gris","negro"]
+    },
+    {
+        "producto": "iPhone 14",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_786356-MLM51559385272_092022-O.webp",
+        "precio": 1014000,
+        "categoria": "celular",
+        "colores": ["rojo","gris","negro"]
+    },
+    {
+        "producto": "iPhone 14 Pro",
+        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2024/01/iPhone14PROMAX.jpg",
+        "precio": 1999999,
+        "categoria": "celular",
+        "colores": ["rojo","azul","gris","blanco","marron"]
+    },
+    {
+        "producto": "iPhone 14 Pro Max",
+        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2024/01/iPhone14PROMAX.jpg",
+        "precio": 1999999,
+        "categoria": "celular",
+        "colores": ["rojo","azul","gris","blanco","marron"]
+    },
+    {
+        "producto": "iPhone 15",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_768125-MLA71783090116_092023-O.webp",
+        "precio": 1889999,
+        "categoria": "celular",
+        "colores": ["rojo","azul","gris","blanco","marron"]
+    },
+    {
+        "producto": "iPhone 15 Pro",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_768125-MLA71783090116_092023-O.webp",
+        "precio": 1889999,
+        "categoria": "celular",
+        "colores": ["rojo","azul","gris","blanco","marron"]
+    },
+    {
+        "producto": "iPhone 15 Pro Max",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_768125-MLA71783090116_092023-O.webp",
+        "precio": 1889999,
+        "categoria": "celular",
+        "colores": ["rojo","azul","gris","blanco","marron"]
+    },
+    {
+        "producto": "Watch S8",
+        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2024/01/watchS8.jpg",
+        "precio": 2000000,
+        "categoria": "reloj",
+        "colores": ["verde","negro","gris"]
+    },
+    {
+        "producto": "MacBook Pro",
+        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2023/11/macbookpro_max_-1.jpg",
+        "precio": 1880000,
+        "categoria": "notebook",
+        "colores": ["negro","azul","blanco"]
+    },
+    {
+        "producto": "MacBook Air",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_801112-MLA46516512347_062021-O.webp",
+        "precio": 150000,
+        "categoria": "notebook",
+        "colores": ["negro","azul","blanco"]
+    },
+    {
+        "producto": "iMac",
+        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2023/04/imac24.jpg",
+        "precio": 1799999,
+        "categoria": "computadora",
+        "colores": ["negro","blanco"]
+    },
+    {
+        "producto": "iPad 9th generacion",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_830867-MLA74089488678_012024-O.webp",
+        "precio": 740000,
+        "categoria": "tablet",
+        "colores": ["negro","azul","rosa"]
+    },
+    {
+        "producto": "iPad 10th generacion",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_803992-MLA52988770428_122022-O.webp",
+        "precio": 999999,
+        "categoria": "tablet",
+        "colores": ["negro","azul","blanco","marron"]
+    },
+    {
+        "producto": "iPad Mini",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_998453-MLA48034797620_102021-O.webp",
+        "precio": 795000,
+        "categoria": "tablet",
+        "colores": ["negro","azul","rosa"]
+    },
+    {
+        "producto": "iPad Pro",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_923870-MLA46975173473_082021-O.webp",
+        "precio": 2400000,
+        "categoria": "tablet",
+        "colores": ["negro","azul","rosa","blanco","gris","marron"]
+    }
+]
