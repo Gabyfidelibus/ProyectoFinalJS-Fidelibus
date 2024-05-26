@@ -1119,22 +1119,24 @@ main.productos {
 
 .productos-publicados {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   background-color: #f4f4f4;
   margin-bottom: 20px;
 }
 
-.producto {
+.producto, .info-producto {
   color: #000;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding-bottom: 20px;
-  transition: all 400ms ease-in-out;
+  justify-content: space-evenly;
+  transition: filter 400ms, color 400ms;
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
 }
 
 .producto img {
@@ -1144,21 +1146,61 @@ main.productos {
   margin-bottom: 20px;
 }
 
-.producto h2 {
+.producto h2, .info-producto h2 {
   font-size: 30px;
   margin: 0 20px;
   padding-bottom: 10px;
 }
 
-.producto p {
+.producto p, .info-producto p {
   color: #777;
   font-size: 20px;
-  margin: 0 20px;
+  margin: 0 0 20px 20px;
 }
+
+.info-producto {
+  padding-top: 20px;
+  justify-content: start;
+}
+
+.info-producto .botonera {
+  align-self: center;
+}
+
+.info-producto .btn-agregar-carrito {
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  color: #f1dafc;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #753595;
+  transition: background 400ms, color 400ms;
+}
+
+.info-producto .btn-volver {
+  font-size: 20px;
+  margin: 20px;
+  color: #753595;
+  background-color: transparent;
+  text-decoration: underline;
+  transition: color 400ms;
+}
+
+.info-producto .btn-agregar-carrito:hover {
+  background-color: #931fd6;
+  color: #fff;
+}
+
+.info-producto .btn-volver:hover {
+  color: #a124e9;
+}
+
 
 .producto:hover {
   color: #a124e9;
   filter: brightness(85%);
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 992px) {
@@ -1214,14 +1256,13 @@ main.productos {
   .productos-container {
     padding: 20px;
   }
+  
   .productos-publicados {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 20px;
-    column-gap: 20px;
+    flex-flow: row wrap;
   }
-  .producto {
+  
+  .producto, .info-producto {
+    width: calc(50% - 10px);
     border: 1px solid #dadada;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #dadada;
@@ -1236,10 +1277,11 @@ main.productos {
   main.productos {
     padding: 0 20px;
   }
-  .productos-publicados {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  .producto, .info-producto {
+    width: calc(33.3% - 20px);
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #dadada;
   }
 }
 /* barra de navegacion inferior entre productos */

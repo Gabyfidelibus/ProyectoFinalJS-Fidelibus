@@ -1,4 +1,4 @@
-[
+let productos = [
     {
         "modelo": "iPhone 13",
         "img": "https://http2.mlstatic.com/D_NQ_NP_619667-MLA47781882790_102021-O.webp",
@@ -119,4 +119,47 @@
         "colores": ["negro","azul","rosa","blanco","gris","marron"],
         "capacidad": ["128GB","256GB","512GB","1TB"]
     }
-]
+];
+
+function agregarProductos(productos) {
+    productos.forEach(producto => {
+        let nuevoProducto = document.createElement("li");
+        crearProducto(producto,nuevoProducto);
+        document.querySelector(".productos-publicados").appendChild(nuevoProducto);
+    });
+}
+
+function crearProducto(producto,nuevoProducto) {
+    nuevoProducto.classList.add("producto");
+    nuevoProducto.innerHTML = `
+        <img src=${producto.img} alt=${producto.modelo}>
+        <h2>${producto.modelo}</h2>
+        <p>$${producto.precio}</p>`
+    nuevoProducto.addEventListener("click",(e)=>{mostrarDetalles(producto,e)});
+}
+
+function mostrarDetalles(producto,e){
+    const nuevoProducto = e.target.closest(".producto")
+    if (nuevoProducto) {
+        nuevoProducto.classList.replace("producto","info-producto");
+        nuevoProducto.innerHTML = `
+            <h2>${producto.modelo}</h2>
+            <p>$${producto.precio}</p>`
+        let botonera = document.createElement("div");
+        botonera.classList.add("botonera");
+        let agregarCarritoBTN = document.createElement("button");
+        agregarCarritoBTN.classList.add("btn-agregar-carrito");
+        agregarCarritoBTN.innerText = "Agregar al carrito";
+        let volverBTN = document.createElement("button");
+        volverBTN.classList.add("btn-volver");
+        volverBTN.innerText = "Volver";
+        volverBTN.addEventListener("click",()=>{
+            nuevoProducto.classList.remove("info-producto");
+            crearProducto(producto,nuevoProducto);});
+        botonera.appendChild(agregarCarritoBTN);
+        botonera.appendChild(volverBTN);
+        nuevoProducto.appendChild(botonera);
+    }
+}
+
+agregarProductos(productos);
