@@ -135,7 +135,31 @@ function crearProducto(producto,nuevoProducto) {
         <img src=${producto.img} alt=${producto.modelo}>
         <h2>${producto.modelo}</h2>
         <p>$${producto.precio}</p>`
-    nuevoProducto.addEventListener("click",(e)=>{mostrarDetalles(producto,e)});
+
+    let formCarrito = document.createElement("form");
+        formCarrito.classList.add("form-carrito");
+
+    let selectColor = document.createElement("div");
+    selectColor.classList.add("selec-color");
+    producto.colores.forEach(color => {
+        selectColor.innerHTML += `
+        <label>
+            <input type="radio" name="color" value=${color}>
+            <span class="cbox-color" id="input-${color}"><span class="color"></span>${color}</span>
+        </label>`
+    });
+
+    let agregarCarritoBTN = document.createElement("input");
+    agregarCarritoBTN.classList.add("btn-agregar-carrito");
+    agregarCarritoBTN.setAttribute("type","submit");
+    agregarCarritoBTN.setAttribute("value","Agregar al carrito");
+    agregarCarritoBTN.addEventListener("click",(e)=>{
+        e.preventDefault();
+        agregarAlCarrito(producto, selectColor)});
+
+    formCarrito.appendChild(selectColor);
+    formCarrito.appendChild(agregarCarritoBTN);
+    nuevoProducto.appendChild(formCarrito);
 }
 
 function mostrarDetalles(producto,e){
@@ -145,21 +169,72 @@ function mostrarDetalles(producto,e){
         nuevoProducto.innerHTML = `
             <h2>${producto.modelo}</h2>
             <p>$${producto.precio}</p>`
-        let botonera = document.createElement("div");
-        botonera.classList.add("botonera");
-        let agregarCarritoBTN = document.createElement("button");
+
+        let formCarrito = document.createElement("form");
+        formCarrito.classList.add("form-carrito");
+
+        let agregarCarritoBTN = document.createElement("input");
         agregarCarritoBTN.classList.add("btn-agregar-carrito");
-        agregarCarritoBTN.innerText = "Agregar al carrito";
+        agregarCarritoBTN.setAttribute("type","submit");
+        agregarCarritoBTN.setAttribute("value","Agregar al carrito");
+        
+        let selectColor = document.createElement("div");
+        selectColor.classList.add("selec-color");
+        producto.colores.forEach(color => {
+            selectColor.innerHTML += `
+            <label>
+                <input type="radio" name="color" value=${color}>
+                <span class="cbox-color" id="input-${color}"><span class="color"></span>${color}</span>
+            </label>`
+        });
+        
+        formCarrito.appendChild(selectColor);
+        formCarrito.appendChild(agregarCarritoBTN);
+        nuevoProducto.appendChild(formCarrito);
+
         let volverBTN = document.createElement("button");
         volverBTN.classList.add("btn-volver");
         volverBTN.innerText = "Volver";
         volverBTN.addEventListener("click",()=>{
             nuevoProducto.classList.remove("info-producto");
             crearProducto(producto,nuevoProducto);});
-        botonera.appendChild(agregarCarritoBTN);
-        botonera.appendChild(volverBTN);
-        nuevoProducto.appendChild(botonera);
+
+        nuevoProducto.appendChild(volverBTN);
     }
 }
 
 agregarProductos(productos);
+
+function agregarAlCarrito(producto, colores) {
+    let radios = colores.querySelectorAll('input[name="color"]');
+    let color;
+    for (const radio of radios) {
+        if (radio.checked) {
+            color = radio.value;
+            break;
+        }
+    }
+    if (color) {
+        let aux = producto;
+        aux.colores = color;
+        aux.cantidad = 1;
+        let carritoLS = JSON.parse(localStorage.getItem("carrito"));
+        if (!carritoLS) {
+            carritoLS = {"productos":[aux]};
+        } else {
+            repetido = buscarProductoRepetido(aux);
+            if (repetido !== -1) {
+                carritoLS.productos[repetido].cantidad++;
+            } else {
+                carritoLS.productos.push(aux);
+            }
+        }
+        localStorage.setItem("carrito",JSON.stringify(carritoLS));
+    } else {
+        console.log("Seleccione un color");
+    }
+}
+
+function buscarProductoRepetido(producto){
+    return JSON.parse(localStorage.getItem("carrito")).productos.map(e => JSON.stringify({"modelo": e.modelo, "color": e.colores, "capacidad": e.capacidad})).indexOf(JSON.stringify({"modelo": producto.modelo, "color": producto.colores, "capacidad": producto.capacidad}));
+}
