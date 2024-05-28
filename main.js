@@ -1,11 +1,11 @@
-let productos = [
+const productos = [
     {
         "modelo": "iPhone 13",
         "img": "https://http2.mlstatic.com/D_NQ_NP_619667-MLA47781882790_102021-O.webp",
         "precio": 983999,
         "categoria": "celular",
         "colores": ["rojo","verde","gris","negro"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 14",
@@ -13,7 +13,7 @@ let productos = [
         "precio": 1014000,
         "categoria": "celular",
         "colores": ["rojo","gris","negro"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 14 Pro",
@@ -21,7 +21,7 @@ let productos = [
         "precio": 1999999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 14 Pro Max",
@@ -29,7 +29,7 @@ let productos = [
         "precio": 1999999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15",
@@ -37,7 +37,7 @@ let productos = [
         "precio": 1889999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15 Pro",
@@ -45,7 +45,7 @@ let productos = [
         "precio": 1889999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15 Pro Max",
@@ -53,7 +53,7 @@ let productos = [
         "precio": 1889999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "Watch S8",
@@ -61,7 +61,7 @@ let productos = [
         "precio": 2000000,
         "categoria": "reloj",
         "colores": ["verde","negro","gris"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "MacBook Pro",
@@ -69,7 +69,7 @@ let productos = [
         "precio": 1880000,
         "categoria": "notebook",
         "colores": ["negro","azul","blanco"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "MacBook Air",
@@ -77,7 +77,7 @@ let productos = [
         "precio": 150000,
         "categoria": "notebook",
         "colores": ["negro","azul","blanco"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iMac",
@@ -85,7 +85,7 @@ let productos = [
         "precio": 1799999,
         "categoria": "computadora",
         "colores": ["negro","blanco"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad 9th generacion",
@@ -93,7 +93,7 @@ let productos = [
         "precio": 740000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad 10th generacion",
@@ -101,7 +101,7 @@ let productos = [
         "precio": 999999,
         "categoria": "tablet",
         "colores": ["negro","azul","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad Mini",
@@ -109,7 +109,7 @@ let productos = [
         "precio": 795000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad Pro",
@@ -117,9 +117,22 @@ let productos = [
         "precio": 2400000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa","blanco","gris","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     }
 ];
+
+const coloresDisponibles = ["azul","rojo","blanco","negro","gris","verde","rosa","marron","amarillo"];
+
+function crearFiltroColor(coloresDisponibles) {
+    let filtroColor = document.querySelector(".filtrar-colores");
+    coloresDisponibles.forEach(color => {
+        filtroColor.innerHTML += `
+            <label>
+                <input type="checkbox" value="${color}"/>
+                <span class="cbox-color" id="cbox-${color}"><span class="color"></span>${color}</span>
+            </label>`
+    });
+}
 
 function agregarProductos(productos) {
     productos.forEach(producto => {
@@ -141,11 +154,23 @@ function crearProducto(producto,nuevoProducto) {
 
     let selectColor = document.createElement("div");
     selectColor.classList.add("selec-color");
+    selectColor.innerHTML = `<p>Seleccionar un color:</p>`
     producto.colores.forEach(color => {
         selectColor.innerHTML += `
         <label>
             <input type="radio" name="color" value=${color}>
             <span class="cbox-color" id="input-${color}"><span class="color"></span>${color}</span>
+        </label>`
+    });
+
+    let selectMemoria = document.createElement("div");
+    selectMemoria.classList.add("selec-memoria");
+    selectMemoria.innerHTML = `<p>Seleccionar memoria:</p>`
+    producto.memoria.forEach(memoria => {
+        selectMemoria.innerHTML += `
+        <label>
+            <input type="radio" name="memoria" value=${memoria}>
+            <span class="cbox-memoria" id="input-${memoria}">${memoria}</span>
         </label>`
     });
 
@@ -155,68 +180,32 @@ function crearProducto(producto,nuevoProducto) {
     agregarCarritoBTN.setAttribute("value","Agregar al carrito");
     agregarCarritoBTN.addEventListener("click",(e)=>{
         e.preventDefault();
-        agregarAlCarrito(producto, selectColor)});
+        agregarAlCarrito(producto, selectColor, selectMemoria)});
 
     formCarrito.appendChild(selectColor);
+    formCarrito.appendChild(selectMemoria);
     formCarrito.appendChild(agregarCarritoBTN);
     nuevoProducto.appendChild(formCarrito);
 }
 
-function mostrarDetalles(producto,e){
-    const nuevoProducto = e.target.closest(".producto")
-    if (nuevoProducto) {
-        nuevoProducto.classList.replace("producto","info-producto");
-        nuevoProducto.innerHTML = `
-            <h2>${producto.modelo}</h2>
-            <p>$${producto.precio}</p>`
-
-        let formCarrito = document.createElement("form");
-        formCarrito.classList.add("form-carrito");
-
-        let agregarCarritoBTN = document.createElement("input");
-        agregarCarritoBTN.classList.add("btn-agregar-carrito");
-        agregarCarritoBTN.setAttribute("type","submit");
-        agregarCarritoBTN.setAttribute("value","Agregar al carrito");
-        
-        let selectColor = document.createElement("div");
-        selectColor.classList.add("selec-color");
-        producto.colores.forEach(color => {
-            selectColor.innerHTML += `
-            <label>
-                <input type="radio" name="color" value=${color}>
-                <span class="cbox-color" id="input-${color}"><span class="color"></span>${color}</span>
-            </label>`
-        });
-        
-        formCarrito.appendChild(selectColor);
-        formCarrito.appendChild(agregarCarritoBTN);
-        nuevoProducto.appendChild(formCarrito);
-
-        let volverBTN = document.createElement("button");
-        volverBTN.classList.add("btn-volver");
-        volverBTN.innerText = "Volver";
-        volverBTN.addEventListener("click",()=>{
-            nuevoProducto.classList.remove("info-producto");
-            crearProducto(producto,nuevoProducto);});
-
-        nuevoProducto.appendChild(volverBTN);
-    }
-}
-
-agregarProductos(productos);
-
-function agregarAlCarrito(producto, colores) {
-    let radios = colores.querySelectorAll('input[name="color"]');
-    let color;
+function obtenerValorRadio(radios) {
+    let valor;
     for (const radio of radios) {
         if (radio.checked) {
-            color = radio.value;
+            valor = radio.value;
             break;
         }
     }
-    if (color) {
+    return valor;
+}
+
+function agregarAlCarrito(producto, colores, capacidades) {
+    let color = obtenerValorRadio(colores.querySelectorAll('input[name="color"]'));
+    let memoria = obtenerValorRadio(capacidades.querySelectorAll('input[name="memoria"]'));
+    if (color && memoria) {
         let aux = producto;
         aux.colores = color;
+        aux.memoria = memoria;
         aux.cantidad = 1;
         let carritoLS = JSON.parse(localStorage.getItem("carrito"));
         if (!carritoLS) {
@@ -231,10 +220,13 @@ function agregarAlCarrito(producto, colores) {
         }
         localStorage.setItem("carrito",JSON.stringify(carritoLS));
     } else {
-        console.log("Seleccione un color");
+        console.log("Seleccione un color y la capacidad de memoria deseada");
     }
 }
 
 function buscarProductoRepetido(producto){
-    return JSON.parse(localStorage.getItem("carrito")).productos.map(e => JSON.stringify({"modelo": e.modelo, "color": e.colores, "capacidad": e.capacidad})).indexOf(JSON.stringify({"modelo": producto.modelo, "color": producto.colores, "capacidad": producto.capacidad}));
+    return JSON.parse(localStorage.getItem("carrito")).productos.map(e => JSON.stringify({"modelo": e.modelo, "color": e.colores, "memoria": e.memoria})).indexOf(JSON.stringify({"modelo": producto.modelo, "color": producto.colores, "memoria": producto.memoria}));
 }
+
+crearFiltroColor(coloresDisponibles);
+agregarProductos(productos);

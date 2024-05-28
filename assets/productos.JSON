@@ -5,7 +5,7 @@
         "precio": 983999,
         "categoria": "celular",
         "colores": ["rojo","verde","gris","negro"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 14",
@@ -13,7 +13,7 @@
         "precio": 1014000,
         "categoria": "celular",
         "colores": ["rojo","gris","negro"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 14 Pro",
@@ -21,7 +21,7 @@
         "precio": 1999999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 14 Pro Max",
@@ -29,7 +29,7 @@
         "precio": 1999999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15",
@@ -37,7 +37,7 @@
         "precio": 1889999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15 Pro",
@@ -45,7 +45,7 @@
         "precio": 1889999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15 Pro Max",
@@ -53,7 +53,7 @@
         "precio": 1889999,
         "categoria": "celular",
         "colores": ["rojo","azul","gris","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "Watch S8",
@@ -61,7 +61,7 @@
         "precio": 2000000,
         "categoria": "reloj",
         "colores": ["verde","negro","gris"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "MacBook Pro",
@@ -69,7 +69,7 @@
         "precio": 1880000,
         "categoria": "notebook",
         "colores": ["negro","azul","blanco"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "MacBook Air",
@@ -77,7 +77,7 @@
         "precio": 150000,
         "categoria": "notebook",
         "colores": ["negro","azul","blanco"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iMac",
@@ -85,7 +85,7 @@
         "precio": 1799999,
         "categoria": "computadora",
         "colores": ["negro","blanco"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad 9th generacion",
@@ -93,7 +93,7 @@
         "precio": 740000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad 10th generacion",
@@ -101,7 +101,7 @@
         "precio": 999999,
         "categoria": "tablet",
         "colores": ["negro","azul","blanco","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad Mini",
@@ -109,7 +109,7 @@
         "precio": 795000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPad Pro",
@@ -117,6 +117,6 @@
         "precio": 2400000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa","blanco","gris","marron"],
-        "capacidad": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB","512GB","1TB"]
     }
 ]

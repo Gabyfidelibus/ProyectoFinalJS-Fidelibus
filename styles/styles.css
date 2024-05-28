@@ -1024,18 +1024,23 @@ main.productos {
   border: 1px solid #a124e9;
 }
 
-.filtrar-productos .filtrar-colores label, .producto .selec-color label {
+.filtrar-productos .filtrar-colores label, 
+.producto .selec-color label, 
+.producto .selec-memoria label {
   width: fit-content;
   display: block;
   margin-bottom: 5px;
   cursor: pointer;
 }
 
-.filtrar-productos .filtrar-colores input, .producto .selec-color input {
+.filtrar-productos .filtrar-colores input, 
+.producto .selec-color input, 
+.producto .selec-memoria input {
   display: none;
 }
 
-.filtrar-productos .filtrar-colores .cbox-color, .producto .selec-color .cbox-color {
+.filtrar-productos .filtrar-colores .cbox-color, 
+.producto .selec-color .cbox-color, .producto .selec-memoria .cbox-memoria {
   display: inline-block;
   border-radius: 10px;
   font-size: 18px;
@@ -1045,7 +1050,8 @@ main.productos {
   transition: all 400ms ease-in-out;
 }
 
-.filtrar-productos .filtrar-colores .color, .producto .selec-color .color {
+.filtrar-productos .filtrar-colores .color, 
+.producto .selec-color .color {
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -1054,12 +1060,16 @@ main.productos {
   margin-right: 10px;
 }
 
-.filtrar-productos .filtrar-colores .cbox-color:hover, .producto .selec-color .cbox-color:hover {
+.filtrar-productos .filtrar-colores .cbox-color:hover, 
+.producto .selec-color .cbox-color:hover, 
+.producto .selec-memoria .cbox-memoria:hover {
   border: 1px solid #753595;
   box-shadow: inset 0 0 3px #753595;
 }
 
-.filtrar-productos .filtrar-colores label input:checked ~ span.cbox-color, .producto .selec-color label input:checked ~ span.cbox-color {
+.filtrar-productos .filtrar-colores label input:checked ~ span.cbox-color, 
+.producto .selec-color label input:checked ~ span.cbox-color, 
+.producto .selec-memoria label input:checked ~ span.cbox-memoria{
   border: 1px solid #a124e9;
   box-shadow: inset 0 0 5px #a124e9;
 }
@@ -1096,11 +1106,14 @@ main.productos {
   background-color: rgb(155, 155, 155);
 }
 
+#cbox-rosa .color, #input-rosa .color {
+  background-color: rgb(229, 140, 222);
+}
+
 .filtrar-productos .formulario input.send-button {
   display: block;
-  width: 100px;
   background-color: #753595;
-  padding: 12px;
+  padding: 10px 20px;
   margin-top: 30px;
   font-size: 20px;
   font-weight: 600;
@@ -1143,6 +1156,7 @@ main.productos {
   justify-content: space-evenly;
   transition: filter 400ms, color 400ms;
   width: 100%;
+  min-width: 300px;
   aspect-ratio: 1;
   height: auto;
 }
@@ -1156,14 +1170,14 @@ main.productos {
 
 .producto h2, .producto h2 {
   font-size: 30px;
-  margin: 0 20px;
+  margin: 0 40px;
   padding-bottom: 10px;
 }
 
 .producto p, .producto p {
   color: #777;
   font-size: 20px;
-  margin: 0 0 20px 20px;
+  margin: 0 40px;
 }
 
 .producto .form-carrito {
@@ -1172,7 +1186,8 @@ main.productos {
   flex-direction: column;
 }
 
-.producto .form-carrito .selec-color {
+.producto .form-carrito .selec-color, 
+.producto .form-carrito .selec-memoria {
   align-self: center;
   justify-content: start;
   align-content: flex-start;
@@ -1182,10 +1197,18 @@ main.productos {
   gap: 5px;
 }
 
+.producto .form-carrito .selec-color p, 
+.producto .form-carrito .selec-memoria p {
+  width: 100%;
+  margin: 20px 0 10px;
+  font-size: 17px;
+}
+
 .producto .btn-agregar-carrito {
   font-size: 20px;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 20px;
+  margin-left: 40px;
   color: #f1dafc;
   font-weight: 700;
   border-radius: 10px;
