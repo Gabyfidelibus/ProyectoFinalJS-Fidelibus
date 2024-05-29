@@ -208,7 +208,7 @@ function agregarAlCarrito(producto, colores, capacidades) {
         aux.memoria = memoria;
         aux.cantidad = 1;
         let carritoLS = JSON.parse(localStorage.getItem("carrito"));
-        if (!carritoLS) {
+        if (carritoLS.productos.length === 0) {
             carritoLS = {"productos":[aux]};
         } else {
             repetido = buscarProductoRepetido(aux);
@@ -228,5 +228,15 @@ function buscarProductoRepetido(producto){
     return JSON.parse(localStorage.getItem("carrito")).productos.map(e => JSON.stringify({"modelo": e.modelo, "color": e.colores, "memoria": e.memoria})).indexOf(JSON.stringify({"modelo": producto.modelo, "color": producto.colores, "memoria": producto.memoria}));
 }
 
-crearFiltroColor(coloresDisponibles);
-agregarProductos(productos);
+function iniciarCarrito() {
+    if (!localStorage.getItem("carrito")) {
+        localStorage.setItem("carrito",JSON.stringify({"productos":[]}));
+    }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    iniciarCarrito();
+    crearFiltroColor(coloresDisponibles);
+    agregarProductos(productos);
+});
+

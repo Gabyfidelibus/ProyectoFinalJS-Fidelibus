@@ -54,7 +54,7 @@ header {
   max-width: 3000px;
   background-color: #dadada;
   z-index: 100;
-  box-shadow: 1px 1px 5px #777;
+  box-shadow: 1px 1px 5px #696969;
 }
 
 .navbar, .container-fluid {
@@ -120,7 +120,7 @@ header {
     transition: color 400ms ease-in-out;
   }
   #collapsibleNavbar .active a {
-    color: #777;
+    color: #696969;
     cursor: default;
   }
   .nav-item a:hover {
@@ -144,7 +144,7 @@ footer {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  color: #777;
+  color: #696969;
   z-index: 1;
 }
 
@@ -196,7 +196,7 @@ footer .page-content {
   height: 750px;
   position: relative;
   overflow: hidden;
-  box-shadow: 1px 1px 5px #777;
+  box-shadow: 1px 1px 5px #696969;
 }
 
 .carousel input {
@@ -620,7 +620,7 @@ footer .page-content {
   }
   .recommended-products__item {
     border-radius: 20px;
-    box-shadow: 1px 1px 5px #777;
+    box-shadow: 1px 1px 5px #696969;
   }
   .recommended-products__item h2 {
     margin-top: 40px;
@@ -691,7 +691,7 @@ footer .page-content {
   .popular-products__item {
     border-radius: 10px;
     transition: transform 400ms ease-in-out, color 400ms ease-in-out;
-    box-shadow: 1px 1px 5px #777;
+    box-shadow: 1px 1px 5px #696969;
   }
   .popular-products__item:hover {
     transform: scale(1.1);
@@ -732,7 +732,7 @@ main.nosotros .title {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("../assets/img/about-us.jpg");
-  box-shadow: 1px 1px 5px #777;
+  box-shadow: 1px 1px 5px #696969;
 }
 
 main.contacto .title {
@@ -746,22 +746,12 @@ main.contacto .title {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("../assets/img/contact.jpg");
-  box-shadow: 1px 1px 5px #777;
+  box-shadow: 1px 1px 5px #696969;
 }
 
-main.comparador .title {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("");
-}
 
-main.nosotros h1, main.contacto h1, main.comparador h1 {
+
+main.nosotros h1, main.contacto h1 {
   color: #f4f4f4;
   text-align: center;
   font-size: 35px;
@@ -785,10 +775,10 @@ main.nosotros p {
 }
 
 @media only screen and (min-width: 576px) {
-  main.nosotros .title, main.contacto .title, main.comparador .title {
+  main.nosotros .title, main.contacto .title {
     height: 260px;
   }
-  main.nosotros h1, main.contacto h1, main.comparador h1 {
+  main.nosotros h1, main.contacto h1 {
     font-size: 45px;
   }
   main.nosotros article {
@@ -800,13 +790,14 @@ main.nosotros p {
   }
 }
 @media only screen and (min-width: 992px) {
-  main.nosotros .title, main.contacto .title, main.comparador .title {
+  main.nosotros .title, main.contacto .title {
     height: 330px;
   }
-  main.nosotros h1, main.contacto h1, main.comparador h1 {
+  main.nosotros h1, main.contacto h1 {
     font-size: 60px;
   }
   main.nosotros article {
+    margin-top: 45px;
     margin-bottom: 35px;
     font-size: 30px;
     word-spacing: 10px;
@@ -834,7 +825,7 @@ main.nosotros p {
 }
 
 .contacto .info .col p {
-  color: #777;
+  color: #696969;
   margin-bottom: 0;
 }
 
@@ -877,8 +868,8 @@ main.nosotros p {
   width: 100%;
   margin-bottom: 15px;
   padding: 12px 20px;
-  border: 1px solid #777;
-  color: #777;
+  border: 1px solid #696969;
+  color: #696969;
   font-weight: 400;
   outline: 0;
   font-size: 16px;
@@ -982,8 +973,8 @@ main.productos {
   width: 200px;
   padding: 12px 6px;
   border-radius: 5px;
-  border: 1px solid #777;
-  color: #777;
+  border: 1px solid #696969;
+  color: #696969;
   font-weight: 400;
   outline: 0;
   font-size: 16px;
@@ -1013,9 +1004,9 @@ main.productos {
 .filtrar-productos .price-range-input input {
   width: 95%;
   padding: 9px 6px;
-  border: 1px solid #777;
+  border: 1px solid #696969;
   border-radius: 5px;
-  color: #777;
+  color: #696969;
   outline: 0;
   font-size: 14px;
 }
@@ -1045,7 +1036,7 @@ main.productos {
   border-radius: 10px;
   font-size: 18px;
   border-radius: 10px;
-  border: 1px solid #777;
+  border: 1px solid #696969;
   padding: 9px 12px;
   transition: all 400ms ease-in-out;
 }
@@ -1056,7 +1047,7 @@ main.productos {
   width: 14px;
   height: 14px;
   border-radius: 100%;
-  border: 1px solid #777;
+  border: 1px solid #696969;
   margin-right: 10px;
 }
 
@@ -1175,7 +1166,7 @@ main.productos {
 }
 
 .producto p, .producto p {
-  color: #777;
+  color: #696969;
   font-size: 20px;
   margin: 0 40px;
 }
@@ -1399,7 +1390,8 @@ main.productos {
     color: #3d3d3d;
   }
 }
-/* Estilos de la pagina "comparador" */
+
+/* Estilos de la pagina "carrito" */
 main.carrito {
   display: flex;
   flex-direction: column;
@@ -1407,4 +1399,87 @@ main.carrito {
   align-items: center;
 }
 
+main.carrito .title {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("../assets/img/fondo-carrito.png");
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+}
 
+main.carrito h1 {
+  color: #f4f4f4;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px #3d3d3d;
+  text-transform: uppercase;
+}
+
+.lista-carrito {
+  padding-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.lista-carrito .producto-carrito {
+  position: relative;
+  width: 50%;
+  padding: 40px;
+  border-bottom: 1px solid #3d3d3d;
+  box-shadow: -2px 2px 2px #696969;
+}
+
+.carrito-vacio {
+  align-items: center;
+}
+
+.lista-carrito h2 {
+  font-size: 30px;
+  color: #696969;
+  margin-top: 40px;
+}
+
+.lista-carrito h3 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.lista-carrito h3 span {
+  font-weight: 300;
+}
+
+.lista-carrito p {
+  font-size: 25px;
+  color: #5f5f5f;
+}
+
+.lista-carrito h4 {
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.lista-carrito h4 span {
+  font-weight: 900;
+}
+
+.lista-carrito .eliminar-item-btn {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  font-size: 17px;
+  color:#753595;
+  transition: color 400ms;
+}
+
+.lista-carrito .eliminar-item-btn:hover {
+  color:#a124e9;
+}
