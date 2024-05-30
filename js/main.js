@@ -147,7 +147,7 @@ function crearProducto(producto,nuevoProducto) {
     nuevoProducto.innerHTML = `
         <img src=${producto.img} alt=${producto.modelo}>
         <h2>${producto.modelo}</h2>
-        <p>$${producto.precio}</p>`
+        <p>${formatoPrecio(producto.precio)}</p>`
 
     let formCarrito = document.createElement("form");
         formCarrito.classList.add("form-carrito");
@@ -232,6 +232,14 @@ function iniciarCarrito() {
     if (!localStorage.getItem("carrito")) {
         localStorage.setItem("carrito",JSON.stringify({"productos":[]}));
     }
+}
+
+const formatoPrecio = (number) => {
+    const exp = /(\d)(?=(\d{3})+(?!\d))/g;
+    const rep = '$1,';
+    let arr = number.toFixed(2).toString().split('.');
+    arr[0] = arr[0].replace(exp,rep);
+    return '$' + ((arr[1]) ? arr.join('.') : arr[0]);
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
