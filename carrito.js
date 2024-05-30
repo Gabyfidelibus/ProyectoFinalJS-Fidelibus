@@ -16,21 +16,28 @@ function mostrarCarrito(){
         carrito.innerHTML = ``;
         carritoLS.productos.forEach(producto => {
             let contenedorProducto = document.createElement("div");
+            contenedorProducto.innerHTML = `<img src=${producto.img} alt=${producto.modelo}>`
             contenedorProducto.classList.add("producto-carrito");
-            contenedorProducto.innerHTML = `
-                <h3>${producto.modelo} <span>${producto.colores}</span> <span>${producto.memoria}</span></h3>
-                <p>$${producto.precio}</p>
-                <p>Cantidad: ${producto.cantidad}</p>
-                <h4>Subtotal: <span>$${producto.precio * producto.cantidad}</span></h4>`;
+            let itemGeneral = document.createElement("div");
+            itemGeneral.classList.add("item-general");
+            itemGeneral.innerHTML = `
+                <h3>${producto.modelo}, ${producto.memoria}, color ${producto.colores}</h3>
+                <p>Cantidad: ${producto.cantidad}</p>`;
+            
             total += producto.precio * producto.cantidad;
             let eliminarBTN = document.createElement("button");
             eliminarBTN.classList.add("eliminar-item-btn")
             eliminarBTN.innerText = "Eliminar";
             eliminarBTN.addEventListener("click",(e)=>{
                 e.preventDefault();
+                console.log("Eliminar");
                 eliminarElemento(carritoLS.productos, producto)});
-            
-            contenedorProducto.appendChild(eliminarBTN);
+            let itemPrecio = document.createElement("div");
+            itemPrecio.classList.add("item-precio");
+            itemPrecio.innerHTML = `<h4>$${producto.precio}</h4>`;
+            itemGeneral.appendChild(eliminarBTN);
+            contenedorProducto.appendChild(itemGeneral);
+            contenedorProducto.appendChild(itemPrecio);
             listaCarrito.appendChild(contenedorProducto);
             carrito.appendChild(listaCarrito);
         });

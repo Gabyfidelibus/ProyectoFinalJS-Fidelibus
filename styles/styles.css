@@ -1432,6 +1432,11 @@ main.carrito h1 {
   gap: 20px;
 }
 
+.contenedor-carrito h2 {
+  font-size: 30px;
+  color: #696969;
+}
+
 .lista-carrito {
   width: 50%;
   height: max-content;
@@ -1444,9 +1449,12 @@ main.carrito h1 {
 }
 
 .producto-carrito {
-  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
   width: 90%;
-  padding: 40px;
+  padding: 40px 0;
+  column-gap: 40px;
   border-bottom: 1px solid #bdbdbd;
 }
 
@@ -1454,40 +1462,24 @@ main.carrito h1 {
   border: none;
 }
 
-.lista-carrito h2 {
-  font-size: 30px;
-  color: #696969;
-  margin-top: 40px;
-}
-
 .lista-carrito h3 {
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 900;
 }
 
-.lista-carrito h3 span {
-  font-weight: 300;
-}
-
 .lista-carrito p {
-  font-size: 25px;
+  font-size: 15px;
   color: #5f5f5f;
 }
 
 .lista-carrito h4 {
   margin-bottom: 20px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
 }
 
-.lista-carrito h4 span {
-  font-weight: 900;
-}
-
 .lista-carrito .eliminar-item-btn {
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
+  background-color: transparent;
   font-size: 17px;
   color:#753595;
   transition: color 400ms;
@@ -1495,4 +1487,14 @@ main.carrito h1 {
 
 .lista-carrito .eliminar-item-btn:hover {
   color:#a124e9;
+}
+
+.lista-carrito img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.lista-carrito .item-precio {
+  justify-self: flex-end;
 }
