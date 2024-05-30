@@ -5,10 +5,14 @@ function iniciarCarrito() {
 }
 
 function mostrarCarrito(){
-    let carrito = document.querySelector(".lista-carrito");
+    let carrito = document.querySelector(".contenedor-carrito");
     let carritoLS = JSON.parse(localStorage.getItem("carrito"));
+    let total = 0;
     if (carritoLS && carritoLS.productos.length) {
-        carrito.classList.remove("carrito-vacio");
+        let listaCarrito = document.createElement("div");
+        listaCarrito.classList.add("lista-carrito");
+        let resumenCarrito = document.createElement("div");
+        resumenCarrito.classList.add("resumen-carrito");
         carrito.innerHTML = ``;
         carritoLS.productos.forEach(producto => {
             let contenedorProducto = document.createElement("div");
@@ -18,7 +22,7 @@ function mostrarCarrito(){
                 <p>$${producto.precio}</p>
                 <p>Cantidad: ${producto.cantidad}</p>
                 <h4>Subtotal: <span>$${producto.precio * producto.cantidad}</span></h4>`;
-
+            total += producto.precio * producto.cantidad;
             let eliminarBTN = document.createElement("button");
             eliminarBTN.classList.add("eliminar-item-btn")
             eliminarBTN.innerText = "Eliminar";
@@ -27,10 +31,12 @@ function mostrarCarrito(){
                 eliminarElemento(carritoLS.productos, producto)});
             
             contenedorProducto.appendChild(eliminarBTN);
-            carrito.appendChild(contenedorProducto);
+            listaCarrito.appendChild(contenedorProducto);
+            carrito.appendChild(listaCarrito);
         });
+        resumenCarrito.innerHTML = `<h3>TOTAL: $${total}</h3>`;
+        carrito.appendChild(resumenCarrito);
     } else {
-        carrito.classList.add("carrito-vacio");
         carrito.innerHTML = `<h2>El carrito está vacio</h2>`;
     }
 }
