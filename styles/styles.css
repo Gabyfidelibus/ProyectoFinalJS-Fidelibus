@@ -50,9 +50,9 @@ main {
 /* Estilos del encabezado */
 header {
   width: 100%;
-  height: 56px;
+  height: 70px;
   max-width: 3000px;
-  background-color: #dadada;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), #931fd6;
   z-index: 100;
   box-shadow: 1px 1px 5px #696969;
 }
@@ -72,8 +72,18 @@ header {
 }
 
 .home-menu img {
-  height: 45px;
+  height: 60px;
   width: auto;
+}
+
+.navbar-brand img {
+  width: 200px;
+}
+
+@media only screen and (max-width: 390px) {
+  .navbar-apple {
+    display: none;
+  }
 }
 
 .navbar-toggler {
@@ -111,29 +121,20 @@ header {
     right: 7%;
   }
   #collapsibleNavbar {
-    background-color: #dadada;
+    background-color: #931fd6;
+
   }
   .nav-item a {
-    color: #000;
+    color: #fff;
     font-size: 1.25rem;
     font-weight: bold;
     transition: color 400ms ease-in-out;
   }
-  #collapsibleNavbar .active a {
-    color: #696969;
-    cursor: default;
-  }
   .nav-item a:hover {
-    color: #a124e9;
-    text-shadow: 1px 1px 5px #dadada;
+    color: #dadada;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .nav-item a {
-    font-size: 1.5rem;
-    font-weight: bolder;
-  }
-}
+
 /* Estilos del footer */
 footer {
   background-color: #3d3d3d;
@@ -732,6 +733,15 @@ main.contacto .title {
   box-shadow: 1px 1px 5px #696969;
 }
 
+main.contacto h1 {
+  color: #f4f4f4;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px #3d3d3d;
+  text-transform: uppercase;
+}
+
 .contacto .info, .contacto .formulario {
   width: 90%;
   max-width: 400px;
@@ -964,7 +974,7 @@ main.productos {
   border-radius: 10px;
   font-size: 18px;
   border-radius: 10px;
-  border: 1px solid #696969;
+  border: 1px solid #bdbdbd;
   padding: 9px 12px;
   transition: all 400ms ease-in-out;
 }
@@ -975,7 +985,7 @@ main.productos {
   width: 14px;
   height: 14px;
   border-radius: 100%;
-  border: 1px solid #696969;
+  border: 1px solid #bdbdbd;
   margin-right: 10px;
 }
 
@@ -1067,6 +1077,7 @@ main.productos {
 }
 
 .producto {
+  position: relative;
   color: #000;
   background-color: #fff;
   display: flex;
@@ -1076,12 +1087,13 @@ main.productos {
   transition: filter 400ms, color 400ms;
   width: 100%;
   min-width: 300px;
-  aspect-ratio: 1;
   height: auto;
+  padding-bottom: 100px;
 }
 
 .producto img {
-  width: 100%;
+  align-self: center;
+  width: 80%;
   aspect-ratio: 4/3;
   object-fit: contain;
   margin-bottom: 20px;
@@ -1124,35 +1136,22 @@ main.productos {
 }
 
 .producto .btn-agregar-carrito {
-  font-size: 20px;
-  padding: 10px 20px;
-  margin: 20px;
-  margin-left: 40px;
-  color: #f1dafc;
-  font-weight: 700;
-  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 80px);
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 0;
+  margin: 20px 40px;
+  font-size: 25px;
   background-color: #753595;
-  transition: background 400ms, color 400ms;
-  width: max-content
-}
-
-.producto .btn-volver {
-  font-size: 20px;
-  margin: 20px;
-  color: #753595;
-  background-color: transparent;
-  text-decoration: underline;
-  transition: color 400ms;
-  align-self: self-end;
+  color: #fff;
+  transition: background 400ms;
 }
 
 .producto .btn-agregar-carrito:hover {
-  background-color: #931fd6;
-  color: #fff;
-}
-
-.producto .btn-volver:hover {
-  color: #a124e9;
+  background-color: #a124e9;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 992px) {
@@ -1325,28 +1324,15 @@ main.carrito {
   flex-direction: column;
   align-self: center;
   align-items: center;
+  background-color: #eeeeee;
 }
 
-main.carrito .title {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("../assets/img/fondo-carrito.png");
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-main.carrito h1 {
-  color: #f4f4f4;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 900;
-  text-shadow: 2px 2px 5px #3d3d3d;
-  text-transform: uppercase;
+.titulo-carrito {
+  width: 75%;
+  color: #000;
+  font-size: 30px;
+  font-weight: 300;
+  padding: 60px 20px 20px;
 }
 
 .contenedor-carrito {
@@ -1355,8 +1341,7 @@ main.carrito h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #eeeeee;
-  padding: 80px;
+  padding-bottom: 60px;
   gap: 20px;
 }
 

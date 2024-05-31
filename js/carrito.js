@@ -7,8 +7,10 @@ function iniciarCarrito() {
 function mostrarCarrito(){
     const carrito = document.querySelector(".contenedor-carrito");
     const carritoLS = JSON.parse(localStorage.getItem("carrito"));
+    const titulo = document.querySelector(".titulo-carrito");
     let total = 0;
     if (carritoLS && carritoLS.productos.length) {
+        titulo.innerText = `Mi carrito (${carritoLS.productos.length} item)`;
         const listaCarrito = document.createElement("div");
         listaCarrito.classList.add("lista-carrito");
         const resumenCarrito = document.createElement("div");
@@ -78,6 +80,7 @@ function mostrarCarrito(){
         crearResumenCarrito(resumenCarrito,total,0);
         carrito.appendChild(resumenCarrito);
     } else {
+        titulo.innerText = ``;
         carrito.innerHTML = `<h2>El carrito está vacio</h2>`;
     }
 }
