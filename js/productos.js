@@ -135,10 +135,12 @@ function crearFiltroColor(coloresDisponibles) {
 }
 
 function agregarProductos(productos) {
+    const productosPublicados = document.querySelector(".productos-publicados");
+    productosPublicados.innerHTML = ``;
     productos.forEach(producto => {
         let nuevoProducto = document.createElement("li");
         crearProducto(producto,nuevoProducto);
-        document.querySelector(".productos-publicados").appendChild(nuevoProducto);
+        productosPublicados.appendChild(nuevoProducto);
     });
 }
 
@@ -242,9 +244,49 @@ const formatoPrecio = (number) => {
     return '$' + ((arr[1]) ? arr.join('.') : arr[0]);
 }
 
+function crearBarraBusqueda(){
+    const barraBusqueda = document.createElement("div");
+    barraBusqueda.classList.add("buscador");
+    barraBusqueda.innerHTML = `
+        <input type="text" name="buscador" class="in-busqueda" placeholder="Buscar">
+        <button class="btn-buscador"><svg class="buscar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/></svg></button>`;
+    setTimeout(()=>{
+        document.querySelector(".container-fluid").insertBefore(barraBusqueda,document.querySelector(".navbar-toggler"));
+        document.querySelector(".btn-buscador").addEventListener("click",(e)=>{
+            e.preventDefault();
+            const valorBuscado = document.querySelector(".in-busqueda");
+            if (valorBuscado){
+                const productosBuscados = buscarProductos(valorBuscado.value);
+                agregarProductos(productosBuscados);
+            }
+        });
+    },1);
+    
+}
+
+function buscarProductos(valor){
+    let productosCoincidentes = [];
+    productos.forEach(producto => {
+        if (producto.modelo.toLowerCase().includes(valor.toLowerCase())){
+            productosCoincidentes.push(producto);
+        }
+    });
+    return productosCoincidentes;
+}
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded",()=>{
     iniciarCarrito();
+    crearBarraBusqueda();
     crearFiltroColor(coloresDisponibles);
-    agregarProductos(productos);
+    agregarProductos(productos,undefined);
 });
 

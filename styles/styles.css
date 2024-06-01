@@ -67,7 +67,7 @@ header {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  margin-left: 7%;
+  margin-left: 100px;
   margin-right: 0;
 }
 
@@ -80,14 +80,74 @@ header {
   width: 200px;
 }
 
+.buscador {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-right: 567px;
+}
+
+.in-busqueda {
+  width: 50%;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid #3d3d3d;
+  outline: 0;
+}
+
+.btn-buscador {
+  height: 46px;
+  padding: 0 15px;
+  border: 1px solid #3d3d3d;
+  border-left: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #cccccc;
+  transition: background 400ms;
+}
+
+.btn-buscador:hover {
+  background-color: #bdbdbd;
+}
+
+.btn-buscador .buscar-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.btn-buscador .buscar-icon path {
+  stroke: #3d3d3d;
+}
+
+.navbar-toggler {
+  margin-right: 100px;
+}
+
+@media only screen and (max-width: 992px) {
+  .home-menu {
+    display: none;
+  }
+  .buscador {
+    width: 60%;
+    margin: 10px 20px 0;
+  }
+  .in-busqueda {
+    width: 100%;
+  }
+  .navbar-toggler {
+    margin-top: 10px;
+    margin-right: 10%;
+  }
+}
+
 @media only screen and (max-width: 390px) {
   .navbar-apple {
     display: none;
   }
-}
-
-.navbar-toggler {
-  margin-right: 7%;
 }
 
 #collapsibleNavbar {
@@ -118,7 +178,7 @@ header {
   .navbar-nav {
     position: absolute;
     padding: 0;
-    right: 7%;
+    right: 100px;
   }
   #collapsibleNavbar {
     background-color: #931fd6;
@@ -713,9 +773,6 @@ main.contacto {
   flex-direction: column;
   align-self: center;
   align-items: center;
-}
-
-main.contacto {
   justify-content: space-evenly;
 }
 
@@ -883,7 +940,7 @@ main.contacto h1 {
 main.productos {
   display: flex;
   flex-direction: column;
-  align-self: start;
+  align-self: center;
   align-items: start;
 }
 
@@ -937,6 +994,7 @@ main.productos {
 .filtrar-productos .price-range-input label {
   font-size: 18px;
   margin-bottom: 5px;
+  color: #696969;
 }
 
 .filtrar-productos .price-range-input input {
