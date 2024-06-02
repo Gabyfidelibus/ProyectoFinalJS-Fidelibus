@@ -799,7 +799,7 @@ main.contacto h1 {
   text-transform: uppercase;
 }
 
-.contacto .info, .contacto .formulario {
+.contacto .info, .contacto .filtro-formulario {
   width: 90%;
   max-width: 400px;
   margin-bottom: 25px;
@@ -848,18 +848,18 @@ main.contacto h1 {
   background-color: #a124e9;
 }
 
-.contacto .formulario {
+.contacto .filtro-formulario {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
 
 /* personalizacion de los input del formulario de contacto */
-.contacto .formulario input[type=text],
-.contacto .formulario input[type=email],
-.contacto .formulario input[type=number],
-.contacto .formulario select,
-.contacto .formulario textarea {
+.contacto .filtro-formulario input[type=text],
+.contacto .filtro-formulario input[type=email],
+.contacto .filtro-formulario input[type=number],
+.contacto .filtro-formulario select,
+.contacto .filtro-formulario textarea {
   width: 100%;
   margin-bottom: 15px;
   padding: 12px 20px;
@@ -870,15 +870,15 @@ main.contacto h1 {
   font-size: 16px;
 }
 
-.contacto .formulario input[type=text]:focus,
-.contacto .formulario input[type=email]:focus,
+.contacto .filtro-formulario input[type=text]:focus,
+.contacto .filtro-formulario input[type=email]:focus,
 .contacto .formulario input[type=number]:focus,
-.contacto .formulario select:focus,
-.contacto .formulario textarea:focus {
+.contacto .filtro-formulario select:focus,
+.contacto .filtro-formulario textarea:focus {
   border: 1px solid #a124e9;
 }
 
-.contacto .formulario textarea {
+.contacto .filtro-formulario textarea {
   max-width: 100%;
   min-width: 100%;
   max-height: 250px;
@@ -890,11 +890,11 @@ main.contacto h1 {
   font-size: 15px;
 }
 
-.contacto .formulario input[type=checkbox] {
+.contacto .filtro-formulario input[type=checkbox] {
   accent-color: #a124e9;
 }
 
-.contacto .formulario input.send-button {
+.contacto .filtro-formulario input.filtro-send-button {
   display: block;
   width: 70%;
   max-width: 300px;
@@ -909,7 +909,7 @@ main.contacto h1 {
   border: transparent;
 }
 
-.contacto .formulario input.send-button:hover {
+.contacto .filtro-formulario input.filtro-send-button:hover {
   background-color: #a124e9;
   cursor: pointer;
 }
@@ -931,7 +931,7 @@ main.contacto h1 {
     margin-top: 10px;
     gap: 40px;
   }
-  .contacto .formulario input.send-button {
+  .contacto .filtro-formulario input.filtro-send-button {
     align-self: flex-end;
     width: 150px;
   }
@@ -968,7 +968,7 @@ main.productos {
   margin: 20px 10px 10px;
 }
 
-.filtrar-productos .formulario {
+.filtrar-productos .filtro-formulario {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -1107,7 +1107,7 @@ main.productos {
   background-color: rgb(229, 140, 222);
 }
 
-.filtrar-productos .formulario input.send-button {
+.filtrar-productos .filtro-formulario input.filtro-send-button {
   display: block;
   background-color: #753595;
   padding: 15px 30px;
@@ -1120,7 +1120,7 @@ main.productos {
   transition: background 400ms ease-in-out;
 }
 
-.filtrar-productos .formulario input.send-button:hover {
+.filtrar-productos .filtro-formulario input.filtro-send-button:hover {
   background-color: #a124e9;
   cursor: pointer;
 }
@@ -1229,18 +1229,18 @@ main.productos {
   .filtrar-productos details {
     width: 100%;
   }
-  .filtrar-productos .formulario {
+  .filtrar-productos .filtro-formulario {
     display: flex;
     flex-direction: row;
     align-items: start;
   }
-  .filtrar-productos .formulario .section2 {
+  .filtrar-productos .filtro-formulario .section2 {
     margin-left: 20px;
   }
-  .filtrar-productos .formulario .section2 h3 {
+  .filtrar-productos .filtro-formulario .section2 h3 {
     margin-top: 0;
   }
-  .filtrar-productos .formulario .section2 .filtrar-colores {
+  .filtrar-productos .filtro-formulario .section2 .filtrar-colores {
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
@@ -1259,7 +1259,7 @@ main.productos {
   .filtrar-productos {
     position: relative;
   }
-  .filtrar-productos .formulario .send-button {
+  .filtrar-productos .filtro-formulario .filtro-send-button {
     position: absolute;
     bottom: 15px;
     left: 15px;
@@ -1269,7 +1269,7 @@ main.productos {
   }
 }
 @media only screen and (min-width: 740px) and (max-width: 992px) {
-  .filtrar-productos .formulario .send-button {
+  .filtrar-productos .filtro-formulario .filtro-send-button {
     position: absolute;
     bottom: 15px;
     left: 15px;

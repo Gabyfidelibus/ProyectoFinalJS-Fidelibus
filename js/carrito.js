@@ -23,7 +23,7 @@ function mostrarCarrito(){
             const itemGeneral = document.createElement("div");
             itemGeneral.classList.add("item-general");
             itemGeneral.innerHTML = `
-                <h3>${producto.modelo}, ${producto.memoria}, color ${producto.colores}</h3>`;
+                <h3>${producto.modelo}${(producto.memoria)?', '+producto.memoria : ''}, color ${producto.colores}</h3>`;
             
             total += producto.precio * producto.cantidad;
 
