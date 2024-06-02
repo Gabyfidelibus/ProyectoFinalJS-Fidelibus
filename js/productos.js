@@ -121,18 +121,8 @@ const productos = [
     }
 ];
 
+let productosMostrados = productos;
 const coloresDisponibles = ["azul","rojo","blanco","negro","gris","verde","rosa","marron","amarillo"];
-
-function crearFiltroColor(coloresDisponibles) {
-    let filtroColor = document.querySelector(".filtrar-colores");
-    coloresDisponibles.forEach(color => {
-        filtroColor.innerHTML += `
-            <label>
-                <input type="checkbox" value="${color}"/>
-                <span class="cbox-color" id="cbox-${color}"><span class="color"></span>${color}</span>
-            </label>`
-    });
-}
 
 function agregarProductos(productos) {
     const productosPublicados = document.querySelector(".productos-publicados");
@@ -256,8 +246,17 @@ function crearBarraBusqueda(){
             e.preventDefault();
             const valorBuscado = document.querySelector(".in-busqueda");
             if (valorBuscado){
-                const productosBuscados = buscarProductos(valorBuscado.value);
-                agregarProductos(productosBuscados);
+                buscarProductos(valorBuscado.value);
+                agregarProductos(productosMostrados);
+            }
+        });
+        document.querySelector(".in-busqueda").addEventListener("keypress",(e)=>{
+            if (e.key === 'Enter') {
+                const valorBuscado = document.querySelector(".in-busqueda");
+                if (valorBuscado){
+                    buscarProductos(valorBuscado.value);
+                    agregarProductos(productosMostrados);
+                }
             }
         });
     },1);
@@ -265,16 +264,61 @@ function crearBarraBusqueda(){
 }
 
 function buscarProductos(valor){
-    let productosCoincidentes = [];
-    productos.forEach(producto => {
+    productosMostrados = productos.map(producto=>{
         if (producto.modelo.toLowerCase().includes(valor.toLowerCase())){
-            productosCoincidentes.push(producto);
+            return producto;
         }
-    });
-    return productosCoincidentes;
+    }).filter(el => el);
 }
 
-
+function crearFiltro(){
+    const contenedorFiltro = document.querySelector(".filtrar-productos");
+    contenedorFiltro.innerHTML = `
+        ${(window.innerWidth <= 992)?'<details>':'<div class="contenedor-filtro">'}
+            <${(window.innerWidth <= 992)?'summary':'h2'}>Filtrar productos</${(window.innerWidth <= 992)?'summary':'h2'}>
+            <form action="" method="GET" autocomplete="off" class="formulario card card-body">
+                <div class="section1">  
+                    <select id="GET-categoria" name="categoria" >
+                        <option disabled selected>Elige una categoría...</option>
+                        <option>Todos</option>
+                        <option>iPhone</option>
+                        <option>iPad</option>
+                        <option>Mac</option>
+                        <option>Watch</option>
+                        <option>AirPods</option>
+                        <option>Cables</option>
+                        <option>Fundas</option>
+                        <option>Cargadores</option>
+                        <option>Otros accesorios</option>
+                    </select>
+                    <h3>Precio</h3>
+                    <div class="price-range">
+                        <div class="price-range-input">
+                            <label for="GET-min-price">Desde</label>
+                            <input id="GET-min-price" type="number" placeholder="0" name="min-price">
+                        </div>
+                        <div class="price-range-input">
+                            <label for="GET-min-price">Hasta</label>
+                            <input id="GET-max-price" type="number" placeholder="3000000" name="max-price">
+                        </div>
+                    </div>
+                </div>
+                <div class="section2">
+                    <h3>Colores</h3>
+                    <div class="filtrar-colores"></div>
+                </div>
+                <input class="send-button" type="submit" value="Buscar">
+            </form>
+            ${(window.innerWidth <= 992)?'</details>':'</div>'}`;
+        let filtroColor = document.querySelector(".filtrar-colores");
+        coloresDisponibles.forEach(color => {
+            filtroColor.innerHTML += `
+                <label>
+                    <input type="checkbox" value="${color}"/>
+                    <span class="cbox-color" id="cbox-${color}"><span class="color"></span>${color}</span>
+                </label>`
+        });
+}
 
 
 
@@ -286,7 +330,9 @@ function buscarProductos(valor){
 document.addEventListener("DOMContentLoaded",()=>{
     iniciarCarrito();
     crearBarraBusqueda();
-    crearFiltroColor(coloresDisponibles);
+    crearFiltro();
     agregarProductos(productos,undefined);
 });
+
+window.addEventListener("resize",()=>crearFiltro());
 

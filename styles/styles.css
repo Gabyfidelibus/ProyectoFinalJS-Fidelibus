@@ -954,8 +954,18 @@ main.productos {
 
 .filtrar-productos summary {
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 300;
   margin: 20px 0;
+}
+
+.filtrar-productos .contenedor-filtro {
+  width: 300px;
+}
+
+.filtrar-productos h2 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 20px 10px 10px;
 }
 
 .filtrar-productos .formulario {
@@ -1100,12 +1110,12 @@ main.productos {
 .filtrar-productos .formulario input.send-button {
   display: block;
   background-color: #753595;
-  padding: 10px 20px;
+  padding: 15px 30px;
   margin-top: 30px;
   font-size: 20px;
-  font-weight: 600;
-  color: #f4f4f4;
-  border-radius: 10px;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 5px;
   border: transparent;
   transition: background 400ms ease-in-out;
 }
@@ -1250,15 +1260,22 @@ main.productos {
     position: relative;
   }
   .filtrar-productos .formulario .send-button {
-    align-self: flex-end;
-    margin-left: 20px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+  }
+  .price-range {
+    margin-bottom: 80px;
   }
 }
 @media only screen and (min-width: 740px) and (max-width: 992px) {
   .filtrar-productos .formulario .send-button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    left: 15px;
+  }
+  .price-range {
+    margin-bottom: 80px;
   }
 }
 @media only screen and (min-width: 576px) {
@@ -1280,6 +1297,15 @@ main.productos {
 @media only screen and (min-width: 992px) {
   main.productos {
     flex-direction: row;
+  }
+  .filtrar-productos select {
+  width: 266px;
+  }
+  .filtrar-productos .price-range {
+    width: 272px;
+  }
+  .filtrar-productos .price-range-input {
+    width: 136px;
   }
 }
 @media only screen and (min-width: 1200px) {
