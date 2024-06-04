@@ -147,14 +147,28 @@ const productos = [
 let productosMostrados = productos;
 const coloresDisponibles = ["azul","rojo","blanco","negro","gris","verde","rosa","marron","amarillo"];
 
-function mostrarProductos(productos) {
-    const productosPublicados = document.querySelector(".productos-publicados");
-    productosPublicados.innerHTML = ``;
-    productos.forEach(producto => {
-        let nuevoProducto = document.createElement("li");
-        crearProducto(producto,nuevoProducto);
-        productosPublicados.appendChild(nuevoProducto);
-    });
+function mostrarProductos() {
+    const contenedorProductos = document.querySelector(".productos-container");
+
+    const contenedorVacio = document.createElement("h2");
+    contenedorVacio.innerHTML = "No se encontraron productos";
+
+    const listaProductos = document.createElement("ul");
+    listaProductos.classList.add("productos-publicados");
+
+    contenedorProductos.innerHTML = '';
+
+    contenedorProductos.appendChild(contenedorVacio);
+
+    if (productosMostrados.length > 0){
+        contenedorProductos.replaceChild(listaProductos,contenedorVacio);
+        listaProductos.innerHTML = ``;
+        productosMostrados.forEach(producto => {
+            let nuevoProducto = document.createElement("li");
+            crearProducto(producto,nuevoProducto);
+            listaProductos.appendChild(nuevoProducto);
+        });
+    }
 }
 
 function crearProducto(producto,nuevoProducto) {
@@ -270,7 +284,7 @@ function crearBarraBusqueda(){
             const valorBuscado = document.querySelector(".in-busqueda");
             if (valorBuscado){
                 buscarProductos(valorBuscado.value);
-                mostrarProductos(productosMostrados);
+                mostrarProductos();
             }
         });
         document.querySelector(".in-busqueda").addEventListener("keypress",(e)=>{
@@ -278,7 +292,7 @@ function crearBarraBusqueda(){
                 const valorBuscado = document.querySelector(".in-busqueda");
                 if (valorBuscado){
                     buscarProductos(valorBuscado.value);
-                    mostrarProductos(productosMostrados);
+                    mostrarProductos();
                 }
             }
         });
@@ -297,8 +311,8 @@ function buscarProductos(valor){
 function crearFiltro(){
     const contenedorFiltro = document.querySelector(".filtrar-productos");
     contenedorFiltro.innerHTML = `
-        ${(window.innerWidth <= 992)?'<details>':'<div class="contenedor-filtro">'}
-            <${(window.innerWidth <= 992)?'summary':'h2'}>Filtrar productos</${(window.innerWidth <= 992)?'summary':'h2'}>
+        ${(window.innerWidth <= 991)?'<details>':'<div class="contenedor-filtro">'}
+            <${(window.innerWidth <= 991)?'summary':'h2'}>Filtrar productos</${(window.innerWidth <= 991)?'summary':'h2'}>
             <form action="" method="GET" autocomplete="off" class="filtro-formulario card card-body">
                 <div class="section1">  
                     <select id="GET-categoria" name="categoria" >
@@ -332,7 +346,7 @@ function crearFiltro(){
                     <div class="filtrar-colores"></div>
                 </div>
             </form>
-            ${(window.innerWidth <= 992)?'</details>':'</div>'}`;
+            ${(window.innerWidth <= 991)?'</details>':'</div>'}`;
 
         let filtroColor = document.querySelector(".filtrar-colores");
         coloresDisponibles.forEach(color => {
@@ -378,7 +392,7 @@ function crearFiltro(){
             const rangoPrecio = [precioMin.value,precioMax.value];
 
             buscarProductosFiltrados(categoriaSeleccionada, rangoPrecio, coloresSeleccionados);
-            mostrarProductos(productosMostrados);
+            mostrarProductos();
         });
         filtroForm.appendChild(sendBTN);
 
@@ -422,7 +436,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     iniciarCarrito();
     crearBarraBusqueda();
     crearFiltro();
-    mostrarProductos(productos,undefined);
+    mostrarProductos();
 });
 
 window.addEventListener("resize",()=>crearFiltro());

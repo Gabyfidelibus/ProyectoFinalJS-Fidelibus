@@ -80,7 +80,7 @@ function mostrarCarrito(){
         crearResumenCarrito(resumenCarrito,total,0);
         carrito.appendChild(resumenCarrito);
     } else {
-        titulo.innerText = ``;
+        titulo.innerText = '';
         carrito.innerHTML = `<h2>El carrito está vacio</h2>`;
     }
 }
@@ -164,8 +164,12 @@ function crearResumenCarrito(resumenCarrito, total, descuento){
     
 }
 
-function finalizaCompra(subtotal) {
+function finalizaCompra() {
     const carrito = document.querySelector(".contenedor-carrito");
+    const titulo = document.querySelector(".titulo-carrito");
+    localStorage.removeItem("carrito");
+    iniciarCarrito();
+    titulo.innerText = '';
     carrito.innerHTML = `<h2>Compra realizada con exito!</h2>`;
 }
 
