@@ -8,10 +8,10 @@ function mostrarHeader(){
                 <!-- Logo de la pagina con un link al index y a la pagina de apple -->
                 <div class="home-menu">
                     <a class="navbar-brand" href="../index.html">
-                        <img src="../assets/img/istore-logo.png" alt="iStore logo">
+                        <img src="./img/istore-logo.png" alt="iStore logo">
                     </a>
                     <a class="navbar-apple" href="https://www.apple.com">
-                        <img src="../assets/img/premium-reseller.png" alt="Apple premium reseller">
+                        <img src="./img/premium-reseller.png" alt="Apple premium reseller">
                     </a>
                 </div>
 
@@ -23,7 +23,7 @@ function mostrarHeader(){
                 <!-- Lista de las paginas del sitio con su menu desplegable -->
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="./productos.html">Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="./carrito.html">Carrito</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
@@ -44,8 +44,8 @@ function mostrarFooter(){
             <a target="_blank" href="https://ar.pinterest.com/"><iconify-icon icon="logos:pinterest" width="32" height="32"></iconify-icon></a>
         </div>
         <div class="page-content">
-            <a href="../index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
+            <a href="./index.html">Inicio</a>
+            <a href="./productos.html">Productos</a>
             <a href="./carrito.html">Carrito</a>
             <a href="./contacto.html">Contacto</a>
         </div>

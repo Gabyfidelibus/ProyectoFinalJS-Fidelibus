@@ -786,7 +786,7 @@ main.contacto .title {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("../assets/img/contact.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("./img/contact.jpg");
   box-shadow: 1px 1px 5px #696969;
 }
 
