@@ -1,122 +1,145 @@
 [
     {
-        "modelo": "iPhone 13",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_619667-MLA47781882790_102021-O.webp",
-        "precio": 983999,
+        "modelo": "AirPods",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_816812-MLA46302470623_062021-O.webp",
+        "precio": 200000,
+        "categoria": "auricular",
+        "colores": ["blanco"],
+        "memoria": null
+    },
+    {
+        "modelo": "AirPods Pro",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_741643-MLA75309123688_032024-O.webp",
+        "precio": 300000,
+        "categoria": "auricular",
+        "colores": ["blanco","negro"],
+        "memoria": null
+    },
+    {
+        "modelo": "iPhone 11",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_656548-MLA46114829749_052021-O.webp",
+        "precio": 850000,
         "categoria": "celular",
-        "colores": ["rojo","verde","gris","negro"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["blanco","negro"],
+        "memoria": ["64GB","128GB"]
+    },
+    {
+        "modelo": "iPhone 12",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_844835-MLU75323368191_032024-O.webp",
+        "precio": 950000,
+        "categoria": "celular",
+        "colores": ["gris","negro"],
+        "memoria": ["128GB","256GB"]
+    },{
+        "modelo": "iPhone 13 Pro",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_619667-MLA47781882790_102021-O.webp",
+        "precio": 1390000,
+        "categoria": "celular",
+        "colores": ["azul","negro","blanco"],
+        "memoria": ["128GB","256GB","512GB"]
     },
     {
         "modelo": "iPhone 14",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_786356-MLM51559385272_092022-O.webp",
-        "precio": 1014000,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_761864-MLM51559384514_092022-O.webp",
+        "precio": 1400000,
         "categoria": "celular",
-        "colores": ["rojo","gris","negro"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
-    },
-    {
-        "modelo": "iPhone 14 Pro",
-        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2024/01/iPhone14PROMAX.jpg",
-        "precio": 1999999,
-        "categoria": "celular",
-        "colores": ["rojo","azul","gris","blanco","marron"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["rojo","blanco","negro"],
+        "memoria": ["128GB","256GB","512GB"]
     },
     {
         "modelo": "iPhone 14 Pro Max",
-        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2024/01/iPhone14PROMAX.jpg",
-        "precio": 1999999,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_873385-MLM51559384419_092022-O.webp",
+        "precio": 2800000,
         "categoria": "celular",
-        "colores": ["rojo","azul","gris","blanco","marron"],
+        "colores": ["amarillo","negro","gris"],
         "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_768125-MLA71783090116_092023-O.webp",
-        "precio": 1889999,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_958009-MLA71782868134_092023-O.webp",
+        "precio": 1499999,
         "categoria": "celular",
-        "colores": ["rojo","azul","gris","blanco","marron"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["rosa","verde","amarillo","negro"],
+        "memoria": ["128GB","256GB","512GB"]
     },
     {
         "modelo": "iPhone 15 Pro",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_768125-MLA71783090116_092023-O.webp",
-        "precio": 1889999,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_878826-MLA71783168396_092023-O.webp",
+        "precio": 1899999,
         "categoria": "celular",
-        "colores": ["rojo","azul","gris","blanco","marron"],
+        "colores": ["gris","azul","blanco","negro"],
         "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "iPhone 15 Pro Max",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_768125-MLA71783090116_092023-O.webp",
-        "precio": 1889999,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_924631-MLA71783367058_092023-O.webp",
+        "precio": 2100000,
         "categoria": "celular",
-        "colores": ["rojo","azul","gris","blanco","marron"],
+        "colores": ["blanco","gris"],
         "memoria": ["128GB","256GB","512GB","1TB"]
     },
     {
         "modelo": "Watch S8",
-        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2024/01/watchS8.jpg",
-        "precio": 2000000,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_645112-MLA52173420737_102022-O.webp",
+        "precio": 595999,
         "categoria": "reloj",
-        "colores": ["verde","negro","gris"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["rojo","negro","gris"],
+        "memoria": ["32GB"]
     },
     {
         "modelo": "MacBook Pro",
         "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2023/11/macbookpro_max_-1.jpg",
-        "precio": 1880000,
+        "precio": 2200000,
         "categoria": "notebook",
         "colores": ["negro","azul","blanco"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["256GB","512GB","1TB"]
     },
     {
         "modelo": "MacBook Air",
         "img": "https://http2.mlstatic.com/D_NQ_NP_801112-MLA46516512347_062021-O.webp",
-        "precio": 150000,
+        "precio": 1750000,
         "categoria": "notebook",
         "colores": ["negro","azul","blanco"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["256GB","512GB"]
     },
     {
         "modelo": "iMac",
-        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2023/04/imac24.jpg",
-        "precio": 1799999,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_648010-MLU74649939964_022024-O.webp",
+        "precio": 3599999,
         "categoria": "computadora",
-        "colores": ["negro","blanco"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["gris","blanco"],
+        "memoria": ["256GB","512GB"]
     },
     {
         "modelo": "iPad 9th generacion",
         "img": "https://http2.mlstatic.com/D_NQ_NP_830867-MLA74089488678_012024-O.webp",
-        "precio": 740000,
+        "precio": 599999,
         "categoria": "tablet",
-        "colores": ["negro","azul","rosa"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["negro","azul","gris"],
+        "memoria": ["64GB","128GB"]
     },
     {
         "modelo": "iPad 10th generacion",
         "img": "https://http2.mlstatic.com/D_NQ_NP_803992-MLA52988770428_122022-O.webp",
-        "precio": 999999,
+        "precio": 859999,
         "categoria": "tablet",
-        "colores": ["negro","azul","blanco","marron"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["negro","azul","marron"],
+        "memoria": ["64GB","128GB"]
     },
     {
         "modelo": "iPad Mini",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_998453-MLA48034797620_102021-O.webp",
-        "precio": 795000,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_632987-MLU74118278126_012024-O.webp",
+        "precio": 889999,
         "categoria": "tablet",
-        "colores": ["negro","azul","rosa"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "colores": ["gris","blanco","rosa"],
+        "memoria": ["64GB","128GB","256GB"]
     },
     {
         "modelo": "iPad Pro",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_923870-MLA46975173473_082021-O.webp",
-        "precio": 2400000,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_814559-MLA53970921150_022023-O.webp",
+        "precio": 2200000,
         "categoria": "tablet",
         "colores": ["negro","azul","rosa","blanco","gris","marron"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
+        "memoria": ["128GB","256GB"]
     }
 ]

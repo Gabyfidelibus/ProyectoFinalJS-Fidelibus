@@ -7,7 +7,7 @@ function mostrarHeader(){
             <div class="container-fluid">
                 <!-- Logo de la pagina con un link al index y a la pagina de apple -->
                 <div class="home-menu">
-                    <a class="navbar-brand" href="../index.html">
+                    <a class="navbar-brand" href="./index.html">
                         <img src="./img/istore-logo.png" alt="iStore logo">
                     </a>
                     <a class="navbar-apple" href="https://www.apple.com">

@@ -1,153 +1,16 @@
-const productos = [
-    {
-        "modelo": "AirPods",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_816812-MLA46302470623_062021-O.webp",
-        "precio": 200000,
-        "categoria": "auricular",
-        "colores": ["blanco"],
-        "memoria": []
-    },
-    {
-        "modelo": "AirPods Pro",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_741643-MLA75309123688_032024-O.webp",
-        "precio": 300000,
-        "categoria": "auricular",
-        "colores": ["blanco","negro"],
-        "memoria": []
-    },
-    {
-        "modelo": "iPhone 11",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_656548-MLA46114829749_052021-O.webp",
-        "precio": 850000,
-        "categoria": "celular",
-        "colores": ["blanco","negro"],
-        "memoria": ["64GB","128GB"]
-    },
-    {
-        "modelo": "iPhone 12",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_844835-MLU75323368191_032024-O.webp",
-        "precio": 950000,
-        "categoria": "celular",
-        "colores": ["gris","negro"],
-        "memoria": ["128GB","256GB"]
-    },{
-        "modelo": "iPhone 13 Pro",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_619667-MLA47781882790_102021-O.webp",
-        "precio": 1390000,
-        "categoria": "celular",
-        "colores": ["azul","negro","blanco"],
-        "memoria": ["128GB","256GB","512GB"]
-    },
-    {
-        "modelo": "iPhone 14",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_761864-MLM51559384514_092022-O.webp",
-        "precio": 1400000,
-        "categoria": "celular",
-        "colores": ["rojo","blanco","negro"],
-        "memoria": ["128GB","256GB","512GB"]
-    },
-    {
-        "modelo": "iPhone 14 Pro Max",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_873385-MLM51559384419_092022-O.webp",
-        "precio": 2800000,
-        "categoria": "celular",
-        "colores": ["amarillo","negro","gris"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
-    },
-    {
-        "modelo": "iPhone 15",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_958009-MLA71782868134_092023-O.webp",
-        "precio": 1499999,
-        "categoria": "celular",
-        "colores": ["rosa","verde","amarillo","negro"],
-        "memoria": ["128GB","256GB","512GB"]
-    },
-    {
-        "modelo": "iPhone 15 Pro",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_878826-MLA71783168396_092023-O.webp",
-        "precio": 1899999,
-        "categoria": "celular",
-        "colores": ["gris","azul","blanco","negro"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
-    },
-    {
-        "modelo": "iPhone 15 Pro Max",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_924631-MLA71783367058_092023-O.webp",
-        "precio": 2100000,
-        "categoria": "celular",
-        "colores": ["blanco","gris"],
-        "memoria": ["128GB","256GB","512GB","1TB"]
-    },
-    {
-        "modelo": "Watch S8",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_645112-MLA52173420737_102022-O.webp",
-        "precio": 595999,
-        "categoria": "reloj",
-        "colores": ["rojo","negro","gris"],
-        "memoria": ["32GB"]
-    },
-    {
-        "modelo": "MacBook Pro",
-        "img": "https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2023/11/macbookpro_max_-1.jpg",
-        "precio": 2200000,
-        "categoria": "notebook",
-        "colores": ["negro","azul","blanco"],
-        "memoria": ["256GB","512GB","1TB"]
-    },
-    {
-        "modelo": "MacBook Air",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_801112-MLA46516512347_062021-O.webp",
-        "precio": 1750000,
-        "categoria": "notebook",
-        "colores": ["negro","azul","blanco"],
-        "memoria": ["256GB","512GB"]
-    },
-    {
-        "modelo": "iMac",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_648010-MLU74649939964_022024-O.webp",
-        "precio": 3599999,
-        "categoria": "computadora",
-        "colores": ["gris","blanco"],
-        "memoria": ["256GB","512GB"]
-    },
-    {
-        "modelo": "iPad 9th generacion",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_830867-MLA74089488678_012024-O.webp",
-        "precio": 599999,
-        "categoria": "tablet",
-        "colores": ["negro","azul","gris"],
-        "memoria": ["64GB","128GB"]
-    },
-    {
-        "modelo": "iPad 10th generacion",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_803992-MLA52988770428_122022-O.webp",
-        "precio": 859999,
-        "categoria": "tablet",
-        "colores": ["negro","azul","marron"],
-        "memoria": ["64GB","128GB"]
-    },
-    {
-        "modelo": "iPad Mini",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_632987-MLU74118278126_012024-O.webp",
-        "precio": 889999,
-        "categoria": "tablet",
-        "colores": ["gris","blanco","rosa"],
-        "memoria": ["64GB","128GB","256GB"]
-    },
-    {
-        "modelo": "iPad Pro",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_814559-MLA53970921150_022023-O.webp",
-        "precio": 2200000,
-        "categoria": "tablet",
-        "colores": ["negro","azul","rosa","blanco","gris","marron"],
-        "memoria": ["128GB","256GB"]
+let mostrados = [];
+
+// Libreria axios para hacer peticiones HTTP
+const getProductos = async ()=> {
+    try {
+        const response = await axios.get("./productos.JSON");
+        return (response) ? response.data : [];
+    } catch (error) {
+        return [];
     }
-];
+}
 
-let productosMostrados = productos;
-const coloresDisponibles = ["azul","rojo","blanco","negro","gris","verde","rosa","marron","amarillo"];
-
-function mostrarProductos() {
+const mostrarProductos = () => {
     const contenedorProductos = document.querySelector(".productos-container");
 
     const contenedorVacio = document.createElement("h2");
@@ -160,10 +23,10 @@ function mostrarProductos() {
 
     contenedorProductos.appendChild(contenedorVacio);
 
-    if (productosMostrados.length > 0){
+    if (mostrados.length > 0){
         contenedorProductos.replaceChild(listaProductos,contenedorVacio);
         listaProductos.innerHTML = ``;
-        productosMostrados.forEach(producto => {
+        mostrados.forEach(producto => {
             let nuevoProducto = document.createElement("li");
             crearProducto(producto,nuevoProducto);
             listaProductos.appendChild(nuevoProducto);
@@ -171,7 +34,7 @@ function mostrarProductos() {
     }
 }
 
-function crearProducto(producto,nuevoProducto) {
+function crearProducto(producto, nuevoProducto) {
     nuevoProducto.classList.add("producto");
     nuevoProducto.innerHTML = `
         <img src=${producto.img} alt=${producto.modelo}>
@@ -194,7 +57,7 @@ function crearProducto(producto,nuevoProducto) {
 
     let selectMemoria = document.createElement("div");
     selectMemoria.classList.add("selec-memoria");
-    if (producto.memoria.length > 0){
+    if (producto.memoria){
         selectMemoria.innerHTML = `<p>Seleccionar memoria:</p>`
         producto.memoria.forEach(memoria => {
             selectMemoria.innerHTML += `
@@ -233,7 +96,7 @@ function obtenerValorRadio(radios) {
 function agregarAlCarrito(producto, colores, capacidades) {
     let color = obtenerValorRadio(colores.querySelectorAll('input[name="color"]'));
     let memoria = obtenerValorRadio(capacidades.querySelectorAll('input[name="memoria"]'));
-    if (color && (memoria || producto.memoria.length === 0) ) {
+    if (color && (memoria || !producto.memoria) ) {
         let aux = producto;
         aux.colores = color;
         aux.memoria = memoria;
@@ -242,7 +105,7 @@ function agregarAlCarrito(producto, colores, capacidades) {
         if (carritoLS.productos.length === 0) {
             carritoLS = {"productos":[aux]};
         } else {
-            repetido = buscarProductoRepetido(aux);
+            let repetido = buscarProductoRepetido(aux);
             if (repetido !== -1) {
                 carritoLS.productos[repetido].cantidad++;
             } else {
@@ -250,7 +113,60 @@ function agregarAlCarrito(producto, colores, capacidades) {
             }
         }
         localStorage.setItem("carrito",JSON.stringify(carritoLS));
+        crearPopUp();
     }
+}
+
+const crearPopUp = () =>{
+    const popup = new Popup({
+        id: "popup-carrito",
+        title: "Enhorabuena!",
+        content: `El produto se ha añadido al carrito exitosamente.
+        accion-carrito big-margin§{btn-refuse}[Seguir comprando]{btn-accept}[Ir al carrito]`,
+        sideMargin: "1.5em",
+        fontSizeMultiplier: "1.2",
+        backgroundColor: "#f4f4f4",
+        borderWidth: ".25em",
+        borderColor: "#753595",
+        titleColor: "#753595",
+        textColor: "#3d3d3d",
+        allowClose: false,
+        css: `
+        .popup.popup-carrito .accion-carrito {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }
+        .popup.popup-carrito button.refuse {
+            background-color: #753595;
+            color: #f4f4f4;
+            padding: 10px 15px 13px;
+        }
+        .popup.popup-carrito button.accept {
+            background-color: #f4f4f4;
+            color: #753595;
+        }`,
+        loadCallback: () => {
+            /* button functionality */
+            document.querySelector(".accion-carrito button.refuse").addEventListener("click", 
+                () => {
+                    popup.hide();
+                    const link = document.createElement("a");
+                    link.setAttribute("href","./productos.html");
+                    link.click();
+                });
+    
+            document.querySelector(".accion-carrito button.accept").addEventListener("click", 
+                () => {
+                    popup.hide();
+                    const link = document.createElement("a");
+                    link.setAttribute("href","./carrito.html");
+                    link.click();
+                });
+        },
+    });
+
+    popup.show();
 }
 
 function buscarProductoRepetido(producto){
@@ -271,7 +187,7 @@ const formatoPrecio = (number) => {
     return '$' + ((arr[1]) ? arr.join('.') : arr[0]);
 }
 
-function crearBarraBusqueda(){
+function crearBarraBusqueda(productos){
     const barraBusqueda = document.createElement("div");
     barraBusqueda.classList.add("buscador");
     barraBusqueda.innerHTML = `
@@ -283,7 +199,7 @@ function crearBarraBusqueda(){
             e.preventDefault();
             const valorBuscado = document.querySelector(".in-busqueda");
             if (valorBuscado){
-                buscarProductos(valorBuscado.value);
+                buscarProductos(valorBuscado.value, productos);
                 mostrarProductos();
             }
         });
@@ -291,7 +207,7 @@ function crearBarraBusqueda(){
             if (e.key === 'Enter') {
                 const valorBuscado = document.querySelector(".in-busqueda");
                 if (valorBuscado){
-                    buscarProductos(valorBuscado.value);
+                    buscarProductos(valorBuscado.value, productos);
                     mostrarProductos();
                 }
             }
@@ -300,15 +216,15 @@ function crearBarraBusqueda(){
     
 }
 
-function buscarProductos(valor){
-    productosMostrados = productos.map(producto=>{
+function buscarProductos(valor, productos){
+    mostrados = productos.map(producto=>{
         if (producto.modelo.toLowerCase().includes(valor.toLowerCase())){
             return producto;
         }
     }).filter(el => el);
 }
 
-function crearFiltro(){
+function crearFiltro(productos){
     const contenedorFiltro = document.querySelector(".filtrar-productos");
     contenedorFiltro.innerHTML = `
         ${(window.innerWidth <= 991)?'<details>':'<div class="contenedor-filtro">'}
@@ -347,6 +263,8 @@ function crearFiltro(){
                 </div>
             </form>
             ${(window.innerWidth <= 991)?'</details>':'</div>'}`;
+
+        const coloresDisponibles = ["azul","rojo","blanco","negro","gris","verde","rosa","marron","amarillo"];
 
         let filtroColor = document.querySelector(".filtrar-colores");
         coloresDisponibles.forEach(color => {
@@ -391,22 +309,22 @@ function crearFiltro(){
             }
             const rangoPrecio = [precioMin.value,precioMax.value];
 
-            buscarProductosFiltrados(categoriaSeleccionada, rangoPrecio, coloresSeleccionados);
+            buscarProductosFiltrados(categoriaSeleccionada, rangoPrecio, coloresSeleccionados, productos);
             mostrarProductos();
         });
         filtroForm.appendChild(sendBTN);
 
 }
 
-function buscarProductosFiltrados(categoria, precio, colores){
+function buscarProductosFiltrados(categoria, precio, colores, productos){
     if (categoria) {
-        productosMostrados = productos.map(producto=>{
+        mostrados = productos.map(producto=>{
             if (producto.categoria.includes(categoria.toLowerCase())){
                 return producto;
             }
         }).filter(el => el);
     }
-    productosMostrados = productosMostrados.map(producto=>{
+    mostrados = mostrados.map(producto=>{
         let newProducto;
         if (colores.length>0){
             colores.every(color=>{
@@ -429,13 +347,12 @@ function buscarProductosFiltrados(categoria, precio, colores){
 
 
 
-
-
-
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded",async ()=> {
+    const productos = await getProductos();
+    mostrados = productos;
     iniciarCarrito();
-    crearBarraBusqueda();
-    crearFiltro();
+    crearBarraBusqueda(productos);
+    crearFiltro(productos);
     mostrarProductos();
 });
 
