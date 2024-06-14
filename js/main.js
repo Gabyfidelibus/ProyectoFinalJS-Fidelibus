@@ -10,7 +10,7 @@ function mostrarHeader(){
                     <a class="navbar-brand" href="./index.html">
                         <img src="./img/istore-logo.png" alt="iStore logo">
                     </a>
-                    <a class="navbar-apple" href="https://www.apple.com">
+                    <a class="navbar-apple" href="https://www.apple.com" target="_blank">
                         <img src="./img/premium-reseller.png" alt="Apple premium reseller">
                     </a>
                 </div>

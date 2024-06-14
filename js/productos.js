@@ -193,27 +193,25 @@ function crearBarraBusqueda(productos){
     barraBusqueda.innerHTML = `
         <input type="text" name="buscador" class="in-busqueda" placeholder="Buscar">
         <button class="btn-buscador"><svg class="buscar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/></svg></button>`;
-    setTimeout(()=>{
-        document.querySelector(".container-fluid").insertBefore(barraBusqueda,document.querySelector(".navbar-toggler"));
-        document.querySelector(".btn-buscador").addEventListener("click",(e)=>{
-            e.preventDefault();
+    const contenedorNav = document.querySelector(".container-fluid");
+    contenedorNav.insertBefore(barraBusqueda,document.querySelector(".navbar-toggler"));
+    document.querySelector(".btn-buscador").addEventListener("click",(e)=>{
+        e.preventDefault();
+        const valorBuscado = document.querySelector(".in-busqueda");
+        if (valorBuscado){
+            buscarProductos(valorBuscado.value, productos);
+            mostrarProductos();
+        }
+    });
+    document.querySelector(".in-busqueda").addEventListener("keypress",(e)=>{
+        if (e.key === 'Enter') {
             const valorBuscado = document.querySelector(".in-busqueda");
             if (valorBuscado){
                 buscarProductos(valorBuscado.value, productos);
                 mostrarProductos();
             }
-        });
-        document.querySelector(".in-busqueda").addEventListener("keypress",(e)=>{
-            if (e.key === 'Enter') {
-                const valorBuscado = document.querySelector(".in-busqueda");
-                if (valorBuscado){
-                    buscarProductos(valorBuscado.value, productos);
-                    mostrarProductos();
-                }
-            }
-        });
-    },1);
-    
+        }
+    });
 }
 
 function buscarProductos(valor, productos){

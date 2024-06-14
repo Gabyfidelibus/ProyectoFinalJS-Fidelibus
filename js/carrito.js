@@ -10,7 +10,7 @@ function mostrarCarrito(){
     const titulo = document.querySelector(".titulo-carrito");
     let total = 0;
     if (carritoLS && carritoLS.productos.length) {
-        titulo.innerText = `Mi carrito (${carritoLS.productos.length} item)`;
+        let cantidadItems = 0
         const listaCarrito = document.createElement("div");
         listaCarrito.classList.add("lista-carrito");
         const resumenCarrito = document.createElement("div");
@@ -26,6 +26,9 @@ function mostrarCarrito(){
                 <h3>${producto.modelo}${(producto.memoria)?', '+producto.memoria : ''}, color ${producto.colores}</h3>`;
             
             total += producto.precio * producto.cantidad;
+
+            cantidadItems += producto.cantidad;
+            titulo.innerText = `Mi carrito (${cantidadItems} item)`;
 
             const contenedorOperaciones = document.createElement("div");
             contenedorOperaciones.classList.add("contenedor-operaciones");
