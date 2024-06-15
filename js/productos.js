@@ -291,9 +291,11 @@ function crearFiltro(productos){
 
             const categoria = document.getElementById("GET-categoria");
             let categoriaSeleccionada;
-            if (categoria.value === "Elige una categoría..." || categoria.value === "Todos"){
+            if (categoria.value === "Todos"){
                 categoriaSeleccionada = '';
-            }else {
+            } else if (categoria.value === "Elige una categoría...") {
+                categoriaSeleccionada = undefined;
+            } else {
                 categoriaSeleccionada = categoria.value;
             }
 
@@ -315,7 +317,7 @@ function crearFiltro(productos){
 }
 
 function buscarProductosFiltrados(categoria, precio, colores, productos){
-    if (categoria) {
+    if (categoria !== undefined) {
         mostrados = productos.map(producto=>{
             if (producto.categoria.includes(categoria.toLowerCase())){
                 return producto;
