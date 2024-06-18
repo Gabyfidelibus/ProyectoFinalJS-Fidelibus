@@ -1,8 +1,13 @@
+function iniciarMoneda(){
+    if (!localStorage.getItem("moneda")) {
+        localStorage.setItem("moneda",JSON.stringify({"tipo":"peso","cambio":1}));
+    }
+}
 
 function mostrarHeader(){
 
-    const header = document.querySelector("header");
-    header.innerHTML = `
+    const $header = document.querySelector("header");
+    $header.innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <!-- Logo de la pagina con un link al index y a la pagina de apple -->
@@ -23,7 +28,7 @@ function mostrarHeader(){
                 <!-- Lista de las paginas del sitio con su menu desplegable -->
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                        <li class="nav-item"><form class="select-moneda"></form></li>
                         <li class="nav-item"><a class="nav-link" href="./productos.html">Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="./carrito.html">Carrito</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
@@ -31,6 +36,22 @@ function mostrarHeader(){
                 </div>
             </div>
         </nav>`;
+    const $moneda = document.querySelector(".select-moneda");
+    let moneda = JSON.parse(localStorage.getItem("moneda"));
+    $moneda.innerHTML = `
+        <label>
+            <input type="checkbox" name="moneda" value="${moneda.tipo}">
+            <span class="cbox-moneda" id="input-moneda">${(moneda.tipo === 'peso') ? 'AR$' : 'U$S'}</span>
+        </label>`;
+    $moneda.addEventListener("mousedown",()=>{
+        const $valorMoneda = $moneda.querySelector("input");
+        $valorMoneda.value = ($valorMoneda.value === 'peso') ? 'dolar' : 'peso';
+        moneda.tipo = $valorMoneda.value;
+        $moneda.querySelector(".cbox-moneda").innerText = (moneda.tipo === 'peso') ? 'AR$' : 'U$S';
+        localStorage.setItem("moneda",JSON.stringify({"tipo":moneda.tipo,"cambio":(moneda.tipo === 'peso')?1:1280}));
+        location.reload();
+
+    });
 }
 
 function mostrarFooter(){
@@ -52,7 +73,8 @@ function mostrarFooter(){
         <p>© 2024 iStore, tienda no-oficial de Apple. All rights reserved.</p>`;
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded",async ()=>{
+    await iniciarMoneda();
     mostrarHeader();
     mostrarFooter();
 });

@@ -179,10 +179,12 @@ function iniciarCarrito() {
     }
 }
 
-const formatoPrecio = (number) => {
+const formatoPrecio = (precio) => {
+    const moneda = JSON.parse(localStorage.getItem("moneda"));
+    precio /= moneda.cambio;
     const exp = /(\d)(?=(\d{3})+(?!\d))/g;
     const rep = '$1,';
-    let arr = number.toFixed(2).toString().split('.');
+    let arr = precio.toFixed(2).toString().split('.');
     arr[0] = arr[0].replace(exp,rep);
     return '$' + ((arr[1]) ? arr.join('.') : arr[0]);
 }
@@ -223,6 +225,7 @@ function buscarProductos(valor, productos){
 }
 
 function crearFiltro(productos){
+    const moneda = JSON.parse(localStorage.getItem("moneda"));
     const contenedorFiltro = document.querySelector(".filtrar-productos");
     contenedorFiltro.innerHTML = `
         ${(window.innerWidth <= 991)?'<details>':'<div class="contenedor-filtro">'}
@@ -251,7 +254,7 @@ function crearFiltro(productos){
                         </div>
                         <div class="price-range-input">
                             <label for="GET-min-price">Hasta</label>
-                            <input id="GET-max-price" type="number" placeholder="4000000" name="max-price">
+                            <input id="GET-max-price" type="number" placeholder=${(moneda.tipo === 'peso') ? "4000000" : "4000"} name="max-price">
                         </div>
                     </div>
                 </div>
@@ -305,9 +308,9 @@ function crearFiltro(productos){
                 precioMin.value = 0;
             }
             if (!precioMax.value){
-                precioMax.value = 4000000;
+                precioMax.value = (moneda.tipo === 'dolar') ? 4000 : 4000000;
             }
-            const rangoPrecio = [precioMin.value,precioMax.value];
+            const rangoPrecio = [moneda.cambio * precioMin.value, moneda.cambio * precioMax.value];
 
             buscarProductosFiltrados(categoriaSeleccionada, rangoPrecio, coloresSeleccionados, productos);
             mostrarProductos();

@@ -159,14 +159,16 @@ header {
   padding: 20px;
 }
 
-.nav-item a {
+.nav-item a,
+.select-moneda .cbox-moneda {
   color: #dadada;
   font-size: 1.25rem;
   font-weight: bold;
   transition: color 400ms ease-in-out;
 }
 
-.navbar-nav li {
+.navbar-nav li,
+.select-moneda {
   color: #dadada;
   font-size: 1.25rem;
   font-weight: bold;
@@ -184,13 +186,15 @@ header {
     background-color: #931fd6;
 
   }
-  .nav-item a {
+  .nav-item a,
+  .select-moneda .cbox-moneda {
     color: #fff;
     font-size: 1.25rem;
     font-weight: bold;
     transition: color 400ms ease-in-out;
   }
-  .nav-item a:hover {
+  .nav-item a:hover,
+  .select-moneda .cbox-moneda:hover {
     color: #dadada;
   }
 }
@@ -1023,7 +1027,8 @@ main.productos {
 
 .filtro-formulario .filtrar-colores label, 
 .producto .selec-color label, 
-.producto .selec-memoria label {
+.producto .selec-memoria label,
+.select-moneda label {
   width: fit-content;
   display: block;
   margin-bottom: 5px;
@@ -1032,7 +1037,8 @@ main.productos {
 
 .filtro-formulario .filtrar-colores input, 
 .producto .selec-color input, 
-.producto .selec-memoria input {
+.producto .selec-memoria input,
+.select-moneda input {
   display: none;
 }
 
@@ -1182,8 +1188,8 @@ main.productos {
 
 .producto p {
   color: #696969;
-  font-size: 20px;
-  margin: 0 40px;
+  font-size: 25px;
+  margin: 10px 40px;
 }
 
 .producto .form-carrito {
