@@ -128,9 +128,6 @@ header {
 }
 
 @media only screen and (max-width: 991px) {
-  .home-menu {
-    display: none;
-  }
   .buscador {
     width: 60%;
     margin: 10px 20px 0;
@@ -1411,8 +1408,18 @@ main.carrito {
 }
 
 .lista-carrito .item-precio {
-  font-size: 18px;
+  text-align: end;
+}
+
+.lista-carrito .item-precio h3 {
+  font-size: 24px;
   font-weight: 900;
+}
+
+.lista-carrito .item-precio h4 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #3d3d3d;
 }
 
 .contenedor-operaciones {
