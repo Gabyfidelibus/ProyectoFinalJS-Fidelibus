@@ -12,6 +12,12 @@ function iniciarCarrito() {
     }
 }
 
+function iniciarProductos() {
+    if (!localStorage.getItem("producto")) {
+        localStorage.setItem("producto",JSON.stringify({"modelo":''}));
+    }
+}
+
 // crea el header para todas las paginas
 function mostrarHeader(){
     const $header = document.querySelector("header");
@@ -79,10 +85,21 @@ function mostrarFooter(){
         <p>© 2024 iStore, tienda no-oficial de Apple. All rights reserved.</p>`;
 }
 
+const iniciarIndex = ()=>{
+    const botonesCompra = document.querySelectorAll(".compra-btn");
+    for (const boton of botonesCompra) {
+        boton.addEventListener('mousedown',()=>{
+            localStorage.setItem("producto",JSON.stringify({"modelo":boton.getAttribute('value')}));
+        })
+    }
+}
+
 // llamo a las funciones una vez que carga el DOM
 document.addEventListener("DOMContentLoaded",async ()=>{
     iniciarCarrito();
+    iniciarProductos();
     await iniciarMoneda();
+    iniciarIndex();
     mostrarHeader();
     mostrarFooter();
 });

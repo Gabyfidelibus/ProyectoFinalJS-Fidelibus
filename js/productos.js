@@ -217,7 +217,7 @@ function crearBuscador(productos){
         e.preventDefault();
         const $valorBuscado = document.querySelector(".in-busqueda");
         if ($valorBuscado){
-            buscarProductos($valorBuscado.value, productos);
+            mostrados = buscarProductos($valorBuscado.value, productos);
             mostrarProductos();
         }
     });
@@ -225,7 +225,7 @@ function crearBuscador(productos){
         if (e.key === 'Enter') {
             const $valorBuscado = document.querySelector(".in-busqueda");
             if ($valorBuscado){
-                buscarProductos($valorBuscado.value, productos);
+                mostrados = buscarProductos($valorBuscado.value, productos);
                 mostrarProductos();
             }
         }
@@ -234,8 +234,16 @@ function crearBuscador(productos){
 
 // guarda en mostrados los productos que coinciden con el modelo buscado
 function buscarProductos(valor, productos){
-    mostrados = productos.map(producto=>{
+    return productos.map(producto=>{
         if (producto.modelo.toLowerCase().includes(valor.toLowerCase())){
+            return producto;
+        }
+    }).filter(el => el);
+}
+
+function buscarProductoExacto(valor, productos){
+    return productos.map(producto=>{
+        if (producto.modelo.toLowerCase() === valor.toLowerCase()){
             return producto;
         }
     }).filter(el => el);
@@ -370,10 +378,21 @@ function buscarProductosFiltrados(categoria, precio, colores, productos){
     }).filter(el => el); // con el filter elimino del array de mostrados los valores 'undefined' que resultan del map
 }
 
+const getLink = (productos) =>{
+    const productoBuscado = JSON.parse(localStorage.getItem("producto"));
+    localStorage.setItem("producto",JSON.stringify({"modelo":''}));
+    if (productoBuscado.modelo !== ''){
+        return buscarProductoExacto(productoBuscado.modelo, productos);
+    } else {
+        return undefined;
+    }
+}
+
 
 document.addEventListener("DOMContentLoaded",async ()=> {
     const productos = await getProductos(); // al tratarse de una promesa tengo que esperar a que se resuelva la misma para obtener los productos
-    mostrados = productos; // al principio se muestran todos los productos
+    const productoIndex = getLink(productos); // si se quiere ver un producto en especifico desde el index se busca con esta funcion
+    mostrados = (productoIndex) ? productoIndex : productos; // al principio se muestran todos los productos
     crearBuscador(productos);
     crearFiltro(productos);
     mostrarProductos();
@@ -383,10 +402,10 @@ document.addEventListener("DOMContentLoaded",async ()=> {
 window.addEventListener("resize",()=>{
     if (window.innerWidth <= 991 && document.querySelector(".contenedor-filtro")){
         document.querySelector(".home-menu").style.display = 'none';
-        crearFiltro();
+        crearFiltro(productos);
     }
     else if (window.innerWidth > 991 && !document.querySelector(".contenedor-filtro")){
         document.querySelector(".home-menu").style.display = 'flex';
-        crearFiltro();
+        crearFiltro(productos);
     }});
 
